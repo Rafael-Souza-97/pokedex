@@ -1,9 +1,16 @@
 import { createContext } from 'react';
 
-export const INITIAL_STATE = { 
-  pokemons: {
-    count: 0, next: null, previous: null, results: []
-  }
-};
+export interface IPokemon {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: [];
+}
 
-export const PokemonsContext = createContext({ pokemons: INITIAL_STATE });
+export interface IPokemonData {
+  pokemon: IPokemon;
+  isLoading: boolean;
+}
+
+
+export const PokemonsContext = createContext<IPokemonData>({} as IPokemonData);

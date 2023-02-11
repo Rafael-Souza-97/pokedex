@@ -1,31 +1,29 @@
 import React, {  ReactNode, useEffect, useState } from 'react';
-import { INITIAL_STATE, PokemonsContext } from '.';
-import { getPokemonData } from '../services/FetchPokemons';
+import { PokemonsContext, IPokemon } from '.';
+import { getPokemonList } from '../services/FetchPokemons';
 
 interface IProps {
   children: ReactNode;
 }
 
-interface IPokemonData {
-  count: number;
-  next: string;
-  previous: string | null;
-  results: Array<{ name: string, url: string }>;
-}
-
 export const PokemonsContextProvider = ({ children }: IProps) => {
-  const [pokemons, setPokemons] = useState(INITIAL_STATE);
+  const [pokemon, setPokemon] = useState<IPokemon>({} as IPokemon );
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getPokemonData();
-      setPokemons({ ...pokemons, pokemons: data });
+      setIsLoading(true);
+      const response = await getPokemonList(25);
+      setPokemon({ ...response });
+      setIsLoading(false);
     }
     fetchData();
   }, []);
 
+  console.log(pokemon);
+
   return (
-    <PokemonsContext.Provider value={{ pokemons }}>
+    <PokemonsContext.Provider value={{ isLoading, pokemon }}>
       {children}
     </PokemonsContext.Provider>
   );

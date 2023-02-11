@@ -1,11 +1,12 @@
-const endpoint = 'https://pokeapi.co/api/v2/pokemon';
+import axios from 'axios';
 
-export const getPokemonData = async () => {
+export const getPokemonList = async (limit: number) => {
   try {
-    const response = await fetch(endpoint);
-    const data = await response.json();
-    return data;
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
+    console.log(response.data);
+
+    return response.data;
   } catch (error) {
-    window.alert(`Ocorreu um erro: ${error}`);
+    throw new Error(`Ocorreu um erro na requisição: ${error}`);
   }
 };
