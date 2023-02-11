@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { PokemonsContextProvider } from '../src/context/pokemonProvider';
+import Home from './pages/Home';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <PokemonsContextProvider>
+      <Route exact path="/" component={Home} />
+    </PokemonsContextProvider>
+  </BrowserRouter>
 );
