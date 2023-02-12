@@ -95,6 +95,24 @@
   font-weight: 600;
 }
 
+.pokemon-search-no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  position: static;
+  text-align: center;
+  z-index: 4;
+  top: -20%;
+}
+
+@media only screen and (max-width: 767px) {
+  p {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 767px) {
   .grid-container {
     grid-template-columns: 1fr;

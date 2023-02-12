@@ -73,7 +73,7 @@ export interface IPage {
 } 
 
 export interface IPokemonContextData {
-  pokemon: IPokemon;
+  filteredPokemon: IPokemon;
   isLoading: boolean;
   totalPages: number;
   page: IPage;
@@ -82,6 +82,8 @@ export interface IPokemonContextData {
     limit: number;
     offset: number;
   }>>
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
 
