@@ -4,6 +4,7 @@ import { PokemonsContext } from '../context/index';
 import { IPokemonDetail } from '../interfaces/IPokemonDetail';
 import TypeBadge from './TypeBadge';
 import '../styles/Card.css';
+import Loading from './Loading';
 
 const Cards = () => {
   const { isLoading, pokemon } = useContext(PokemonsContext);
@@ -12,9 +13,8 @@ const Cards = () => {
 
   return (
     <div className="grid-container">
-
       { isLoading ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         pokemon.results.map((poke: IPokemonDetail, index) => (
           <Link

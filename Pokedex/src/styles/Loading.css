@@ -1,0 +1,47 @@
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+}
+
+.loading-image {
+  position: fixed;
+  top: 40%;
+  width: 100px;
+  animation: spin 1s linear infinite;
+  filter: brightness(30%) contrast(10%);
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .loading-image {
+    width: 30px;
+  }
+}

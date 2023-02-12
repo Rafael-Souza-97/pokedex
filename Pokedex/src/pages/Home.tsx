@@ -10,7 +10,6 @@ function Home() {
       <div>
         <Pagination />
       </div>
-
       <Cards />
     </>
   );
