@@ -20,7 +20,6 @@ const Cards = () => {
           <Link
             to={`/pokemon/${poke.id}`}
             key={index}
-            data-testid={`card-${index}`}
             style={{ textDecoration: 'none' }}
           >
             <div key={index} className="card" data-testid={`card-${index}`}>
