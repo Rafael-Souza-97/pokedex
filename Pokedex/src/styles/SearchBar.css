@@ -35,16 +35,12 @@ input:focus {
   font-family: 'Montserrat', sans-serif;
 }
 
-
-.search-button {
-  width: 50px;
-  height: 100%;
-  border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
+.search-logo {
+  position: relative;
+  opacity: 30%;
+  left: -30px;
 }
+
 
 .search-button:hover {
   background: DarkTurquoise;

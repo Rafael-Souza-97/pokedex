@@ -24,9 +24,9 @@ function SearchBar() {
         onChange={handleChange}
       />
 
-      <button type='submit' className='search-button'>
+      <div className='search-logo'>
         <AiOutlineSearch className='search-icon' />
-      </button>
+      </div>
     </form>
   );
 }
