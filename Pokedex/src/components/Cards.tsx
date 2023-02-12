@@ -24,10 +24,17 @@ const Cards = () => {
           >
             <div key={index} className="card" data-testid={`card-${index}`}>
               <div className='card-image-container'>
-                <img src={poke.sprites.front_default} alt={poke.name} />
+                <img
+                  src={poke.sprites.front_default}
+                  alt={poke.name}
+                  className='card-pokemon-image'
+                />
               </div>
+
               <p>Nº: {poke.id}</p>
-              <h3>{poke.name[0].toUpperCase() + poke.name.substring(1)}</h3>
+
+              <h2>{poke.name[0].toUpperCase() + poke.name.substring(1)}</h2>
+
               <div className="types-container">
                 {poke.types.map((type) => (
                   <TypeBadge key={type.type.name} type={type.type.name} />

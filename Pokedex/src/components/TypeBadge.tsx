@@ -15,23 +15,25 @@ const TypeBadge: React.FC<ITypeBadgeProps> = ({ type }) => {
     break;
   case 'grass':
     backgroundColor = 'lightgreen';
+    color = 'black';
     break;
   case 'water':
-    backgroundColor = 'lightblue';
+    backgroundColor = 'DodgerBlue';
     break;
   case 'bug':
-    backgroundColor = 'yellowgreen';
-    color = 'white';
+    backgroundColor = 'LimeGreen';
     break;
   case 'fire':
     backgroundColor = 'orangered';
     color = 'white';
     break;
   case 'normal':
-    backgroundColor = 'gainsboro';
+    backgroundColor = 'Tomato';
+    color = 'white';
     break;
   case 'electric':
-    backgroundColor = 'yellow';
+    backgroundColor = 'Gold';
+    color = 'black';
     break;
   case 'ground':
     backgroundColor = 'sandybrown';
@@ -63,13 +65,25 @@ const TypeBadge: React.FC<ITypeBadgeProps> = ({ type }) => {
   case 'ice':
     backgroundColor = 'cyan';
     break;
+  case 'flying':
+    backgroundColor = 'DarkTurquoise';
+    break;
   default:
     backgroundColor = 'gainsboro';
+    color = 'black';
     break;
   }
 
   return (
-    <div style={{ backgroundColor, color, padding: '5px 10px', borderRadius: '5px' }}>
+    <div style={{ 
+      backgroundColor,
+      color,
+      padding: '5px 10px',
+      borderRadius: '5px', 
+      textTransform: 'capitalize',
+      fontWeight: 'bold',
+      margin: '0px 5px'
+    }}>
       {type}
     </div>
   );
