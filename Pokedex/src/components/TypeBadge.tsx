@@ -11,25 +11,60 @@ const TypeBadge: React.FC<ITypeBadgeProps> = ({ type }) => {
   switch (type) {
   case 'poison':
     backgroundColor = 'purple';
+    color = 'white';
     break;
   case 'grass':
-    backgroundColor = 'green';
+    backgroundColor = 'lightgreen';
     break;
   case 'water':
-    backgroundColor = 'light-blue';
+    backgroundColor = 'lightblue';
     break;
   case 'bug':
-    backgroundColor = 'light-green';
+    backgroundColor = 'yellowgreen';
+    color = 'white';
     break;
   case 'fire':
-    backgroundColor = 'orange';
-    color = 'black';
+    backgroundColor = 'orangered';
+    color = 'white';
     break;
   case 'normal':
-    backgroundColor = 'gray';
+    backgroundColor = 'gainsboro';
+    break;
+  case 'electric':
+    backgroundColor = 'yellow';
+    break;
+  case 'ground':
+    backgroundColor = 'sandybrown';
+    break;
+  case 'fairy':
+    backgroundColor = 'pink';
+    break;
+  case 'fighting':
+    backgroundColor = 'crimson';
+    break;
+  case 'psychic':
+    backgroundColor = 'hotpink';
+    break;
+  case 'rock':
+    backgroundColor = 'saddlebrown';
+    break;
+  case 'ghost':
+    backgroundColor = 'slateblue';
+    break;
+  case 'dragon':
+    backgroundColor = 'rebeccapurple';
+    break;
+  case 'dark':
+    backgroundColor = 'dimgray';
+    break;
+  case 'steel':
+    backgroundColor = 'silver';
+    break;
+  case 'ice':
+    backgroundColor = 'cyan';
     break;
   default:
-    backgroundColor = 'gray';
+    backgroundColor = 'gainsboro';
     break;
   }
 

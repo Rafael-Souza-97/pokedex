@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IPokemonDetail } from '../interfaces/IPokemonDetail';
 import { getPokemonData } from '../services/FetchPokemons';
+import TypeBadge from './TypeBadge';
+import '../styles/PokemonDetail.css';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);
@@ -21,39 +23,66 @@ const PokemonDetail = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className='pokemon-detail-container'>
       {details && (
-        <div>
-          <img src={details.sprites.front_default} alt={details.name} />
-          <p>Nº: {details.id}</p>
-          <h3>{details.name[0].toUpperCase() + details.name.substring(1)}</h3>
+        <div className='pokemon-detail-card-container' >
           <div>
-            <p>Altura: {details.height / 10} m</p>
-            <p>Peso: {details.weight / 10} kg</p>
+            <img
+              src={details.sprites.front_default}
+              alt={details.name}
+              className='pokemon-detail-image' />
+
+            <p className='pokemon-detail-id'>Nº: {details.id}</p>
+
+            <h3 className='pokemon-detail-title'>
+              {details.name[0].toUpperCase() + details.name.substring(1)}
+            </h3>
           </div>
-          <div>
-            <h4>Tipos:</h4>
-            {details.types.map((type) => (
-              <p key={type.type.name}>{type.type.name}</p>
-            ))}
-          </div>
-          <div>
-            <h4>Habilidades:</h4>
-            {details.abilities.map((ability) => (
-              <p key={ability.ability.name}>{ability.ability.name}</p>
-            ))}
-          </div>
-          <div>
-            <h4>Estatísticas:</h4>
-            {details.stats.map((stat) => (
-              <p key={stat.stat.name}>{stat.stat.name}: {stat.base_stat}</p>
-            ))}
-          </div>
-          <div>
-            <h4>Movimentos:</h4>
-            {details.moves.map((move) => (
-              <p key={move.move.name}>{move.move.name}</p>
-            ))}
+
+          <div className='pokemon-detail-height-weight'>
+            <div>
+              <p>Altura: {details.height / 10} m</p>
+              <p>Peso: {details.weight / 10} kg</p>
+            </div>
+
+            <div className='pokemon-detail-types'>
+              <h4>Tipos:</h4>
+              {details.types.map((type) => (
+                <p key={type.type.name}>{type.type.name}</p>
+              ))}
+            </div>
+
+            <div className='pokemon-detail-skills'>
+              <h4>Habilidades:</h4>
+      
+              {details.abilities.map((ability) => (
+                <p key={ability.ability.name}>{ability.ability.name}</p>
+              ))}
+            </div>
+
+            <div className='pokemon-detail-stats'>
+              <h4>Estatísticas:</h4>
+              {details.stats.map((stat) => (
+                <TypeBadge key={stat.stat.name} type={stat.stat.name} />
+              ))}
+            </div>
+
+            <div className='pokemon-detail-moves'>
+              <h4>Movimentos:</h4>
+              <table>
+                <thead>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody>
+                  {details.moves.map((move) => (
+                    <tr key={move.move.name}>
+                      <td>{move.move.name}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}
