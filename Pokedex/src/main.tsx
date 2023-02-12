@@ -7,6 +7,7 @@ import PokemonDetail from './pages/PokemonDetail';
 import Comparison from './pages/Comparison';
 import Favorites from './pages/Favorites';
 import About from './pages/About';
+import PageNotFound from './pages/PageNotFound';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/comparison" component={Comparison} />
         <Route exact path="/about" component={About} />
+        <Route  path="*" component={PageNotFound} />
       </Switch>
     </PokemonsContextProvider>
   </BrowserRouter>
