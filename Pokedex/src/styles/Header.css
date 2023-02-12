@@ -38,7 +38,7 @@
 }
 
 .header-navbar a:hover {
-  color: #00bcd4;
+  color: DarkTurquoise;
 }
 
 @media (max-width: 768px) {

@@ -40,6 +40,7 @@ const TypeBadge: React.FC<ITypeBadgeProps> = ({ type }) => {
     break;
   case 'fairy':
     backgroundColor = 'pink';
+    color = 'black';
     break;
   case 'fighting':
     backgroundColor = 'crimson';

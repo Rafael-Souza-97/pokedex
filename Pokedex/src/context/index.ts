@@ -12,11 +12,6 @@ export interface IPokemon {
   results: IPokemonDetail[];
 }
 
-export interface IPokemonContextData {
-  pokemon: IPokemon;
-  isLoading: boolean;
-}
-
 export interface IPokemonDetail {
   abilities: Array<{
     ability: { name: string; url: string };
@@ -70,5 +65,24 @@ export interface IPokemonDetail {
   }>;
   weight: number;
 }
+
+export interface IPage { 
+  page: number,
+  limit: number,
+  offset: number
+} 
+
+export interface IPokemonContextData {
+  pokemon: IPokemon;
+  isLoading: boolean;
+  totalPages: number;
+  page: IPage;
+  setPage: React.Dispatch<React.SetStateAction<{
+    page: number;
+    limit: number;
+    offset: number;
+  }>>
+}
+
 
 export const PokemonsContext = createContext<IPokemonContextData>({} as IPokemonContextData);
