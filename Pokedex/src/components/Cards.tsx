@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { PokemonsContext } from '../context/index';
 import { IPokemonDetail } from '../interfaces/IPokemonDetail';
+import TypeBadge from './TypeBadge';
 import '../styles/Card.css';
 
 const Cards = () => {
@@ -8,26 +10,26 @@ const Cards = () => {
 
   if(!pokemon || !pokemon.results) return null;
 
-  console.log(pokemon.results);
-
   return (
     <div className="grid-container">
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         pokemon.results.map((poke: IPokemonDetail, index) => (
-          <div key={index} className="card">
-            <div>
-              <img src={poke.sprites.front_default} alt={poke.name} />
+          <Link to={`/pokemon/${poke.id}`} key={index} style={{ textDecoration: 'none' }}>
+            <div key={index} className="card">
+              <div className='card-image-container'>
+                <img src={poke.sprites.front_default} alt={poke.name} />
+              </div>
+              <p>Nº: {poke.id}</p>
+              <h3>{poke.name[0].toUpperCase() + poke.name.substring(1)}</h3>
+              <div className="types-container">
+                {poke.types.map((type) => (
+                  <TypeBadge key={type.type.name} type={type.type.name} />
+                ))}
+              </div>
             </div>
-            <p>Nº: {poke.id}</p>
-            <h3>{poke.name}</h3>
-            <div className="types-container">
-              {poke.types.map((type) => (
-                <h2 key={type.type.name} className='types'>{type.type.name}</h2>
-              ))}
-            </div>
-          </div>
+          </Link>
         ))
       )}
     </div>
