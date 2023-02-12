@@ -12,12 +12,18 @@ const Cards = () => {
 
   return (
     <div className="grid-container">
-      {isLoading ? (
+
+      { isLoading ? (
         <p>Loading...</p>
       ) : (
         pokemon.results.map((poke: IPokemonDetail, index) => (
-          <Link to={`/pokemon/${poke.id}`} key={index} style={{ textDecoration: 'none' }}>
-            <div key={index} className="card">
+          <Link
+            to={`/pokemon/${poke.id}`}
+            key={index}
+            data-testid={`card-${index}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <div key={index} className="card" data-testid={`card-${index}`}>
               <div className='card-image-container'>
                 <img src={poke.sprites.front_default} alt={poke.name} />
               </div>
