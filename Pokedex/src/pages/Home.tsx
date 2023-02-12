@@ -7,14 +7,14 @@ import '../styles/Home.css';
 
 function Home() {
   return (
-    <>
+    <div className='home'>
       <Header />
       <div className='search-pagination'>
         <SearchBar />
         <Pagination />
       </div>
       <Cards />
-    </>
+    </div>
   );
 }
 

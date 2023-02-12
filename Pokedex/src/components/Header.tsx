@@ -6,19 +6,25 @@ import '../styles/Header.css';
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <Link to='/'>
-        <div className="logo">
-          <img src={ pokemonLogo } alt="Pokemon logo" />
-        </div>
-      </Link>
+      <div className='logo'>
+        <Link to='/'>
+          <div className="logo">
+            <img src={ pokemonLogo } alt="Pokemon logo" />
+          </div>
+        </Link>
+      </div>
 
-      <nav>
-        <ul className='header-navbar'>
-          <li className='home-link' ><Link to="/Comparison">Comparison</Link></li>
-          <li className='comparison-link'><Link to="/favorites">Favorites</Link></li>
-          <li className='about-link'><Link to="/about">About</Link></li>
-        </ul>
-      </nav>
+      <div className='header-nav'>
+        <nav>
+          <ul className='header-navbar'>
+            <li className='home-link' ><Link to="/Comparison">Comparison</Link></li>
+            <li className='comparison-link'><Link to="/favorites">Favorites</Link></li>
+            <li className='about-link'><Link to="/about">About</Link></li>
+          </ul>
+        </nav>
+      
+      </div>
+
     </header>
   );
 };

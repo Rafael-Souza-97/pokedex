@@ -26,13 +26,15 @@
   color: black;
   opacity: 85%;
   border-radius: 15px;
+  background-color: Snow;
   }
 
 .card p{
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: small;
-  margin-bottom: -5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card h2{

@@ -7,7 +7,7 @@
 
 .loading-image {
   position: fixed;
-  top: 40%;
+  top: 60%;
   width: 100px;
   animation: spin 1s linear infinite;
   filter: brightness(30%) contrast(10%);
@@ -22,6 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(192, 192, 192, 0.2);
 }
 
 .loading-container {
