@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/comparison" component={Comparison} />
         <Route exact path="/about" component={About} />
-        <Route  path="*" component={PageNotFound} />
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </PokemonsContextProvider>
   </BrowserRouter>
