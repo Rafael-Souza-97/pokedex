@@ -1,22 +1,3 @@
-import { createContext } from 'react';
-
-export interface IPokemonData {
-  name: string;
-  url: string;
-}
-
-export interface IPokemon {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: IPokemonDetail[];
-}
-
-export interface IPokemonContextData {
-  pokemon: IPokemon;
-  isLoading: boolean;
-}
-
 export interface IPokemonDetail {
   abilities: Array<{
     ability: { name: string; url: string };
@@ -70,5 +51,3 @@ export interface IPokemonDetail {
   }>;
   weight: number;
 }
-
-export const PokemonsContext = createContext<IPokemonContextData>({} as IPokemonContextData);

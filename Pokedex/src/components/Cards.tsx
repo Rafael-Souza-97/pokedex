@@ -1,31 +1,37 @@
 import React, { useContext } from 'react';
-import { PokemonsContext } from '../context';
+import { PokemonsContext } from '../context/index';
+import { IPokemonDetail } from '../interfaces/IPokemonDetail';
 import '../styles/Card.css';
 
-interface IPokemon {
-  name: string;
-  url: string;
-}
-
 const Cards = () => {
-  const { pokemon, isLoading } = useContext(PokemonsContext);
+  const { isLoading, pokemon } = useContext(PokemonsContext);
 
-  if (!pokemon || !pokemon.results) return null;
+  if(!pokemon || !pokemon.results) return null;
 
-  const { results } = pokemon;
+  console.log(pokemon.results);
 
   return (
-    <div className='card-container'>
+    <div className="grid-container">
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        results.map((pokemon: IPokemon, index) => (
-          <div key={ index } className='card'>
-            <h2 className='pokemon-name'>{ pokemon.name }</h2>
+        pokemon.results.map((poke: IPokemonDetail, index) => (
+          <div key={index} className="card">
+            <div>
+              <img src={poke.sprites.front_default} alt={poke.name} />
+            </div>
+            <p>Nº: {poke.id}</p>
+            <h3>{poke.name}</h3>
+            <div className="types-container">
+              {poke.types.map((type) => (
+                <h2 key={type.type.name} className='types'>{type.type.name}</h2>
+              ))}
+            </div>
           </div>
         ))
       )}
     </div>
   );
 };
+
 export default Cards;
