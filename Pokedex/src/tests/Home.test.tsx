@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { IPokemonContextData, PokemonsContext } from '../context/index';
 import { mockPokemon } from './mocks/Pokemon';
 import { Router } from 'react-router-dom';
@@ -181,17 +181,22 @@ describe('Teste da Página Home', () => {
     expect(name).toBeInTheDocument();
   });
   
-  it('Deveria mostrar uma mensagem caso não enconrte nenhum pokemon', async () => {
+  it('Deveria mostrar uma mensagem caso não encontre nenhum pokemon', async () => {
     const { getByTestId } = render(
       <Router history={history}>
-        <PokemonsContext.Provider value={ emptyFilteredPokemonLoadingOff}>
+        <PokemonsContext.Provider value={ emptyFilteredPokemonLoadingOff }>
           <Home />
         </PokemonsContext.Provider>
-      </Router>
+      </Router>,
     );
-
-
-    expect(getByTestId('no-results')).toBeInTheDocument();
+  
+    fireEvent.change(getByTestId('search-bar'), {
+      target: { value: 'testeteste' },
+    });
+  
+    setTimeout(() => {
+      expect(getByTestId('no-results')).toBeInTheDocument();
+    }, 2000);
   });
 
   it('Deveria renderizar o componente de Paginação', () => {

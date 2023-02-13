@@ -9,12 +9,21 @@ import '../styles/Card.css';
 
 const Cards = () => {
   const { isLoading, filteredPokemon, searchResults, search } = useContext(PokemonsContext);
-
-  if(!filteredPokemon || !searchResults || !filteredPokemon.results || !searchResults.results) {
+  
+  if(!filteredPokemon || !filteredPokemon.results) {
     return null;
   }
+  
+  if (search.length !== 0 && searchResults.results.length === 0) {
+    return (
+      <div className='pokemon-search-no-results' data-testid='no-results'>
+        <p>Desculpe, nenhum pokemon foi encontrado com o nome informado</p>
+        <img src={sadPokemon} alt="sad pokemon" className='sad-pokemon-not-found'/>
+      </div>
+    );
+  }
 
-  if (search === '') {
+  if (search.length === 0 && searchResults.results.length === 0) {
     return (
       <div className="grid-container">
         { isLoading ? (
@@ -51,14 +60,6 @@ const Cards = () => {
       </div>
     );
   } else { 
-    if (search.length === 0) {
-      return (
-        <div className='pokemon-search-no-results' data-testid='no-results'>
-          <p>Desculpe, nenhum pokemon foi encontrado com o nome informado</p>
-          <img src={sadPokemon} alt="sad pokemon" className='sad-pokemon-not-found'/>
-        </div>
-      );
-    }
     return (
       <div className="grid-container">
         { isLoading ? (
