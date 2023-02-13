@@ -30,16 +30,17 @@ function Pagination() {
   
   
   return (
-    <div className='pagination-container'>
+    <div className='pagination-container' data-testid='pagination'>
       <button 
         disabled={page.page === 1}
         onClick={onLeftClickHandle}
         className='pagination-left-button'
+        data-testid='left-button'
       >
         <HiChevronDoubleLeft />
       </button>
 
-      <div className='pagination-text'>
+      <div className='pagination-text' data-testid='pagination-text' >
         {`${page.page} de ${totalPages}`}
       </div>
 
@@ -47,6 +48,7 @@ function Pagination() {
         disabled={ page.page === totalPages }
         onClick={onRightClickHandle}
         className='pagination-right-button'
+        data-testid='right-button'
       >
         <HiChevronDoubleRight />
       </button>

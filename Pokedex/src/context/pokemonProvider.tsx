@@ -66,8 +66,6 @@ export const PokemonsContextProvider = ({ children }: IProps) => {
     }
   }, [search, pokemon]);
 
-  console.log(filteredPokemon);
-
   return (
     <PokemonsContext.Provider value={{
       isLoading,

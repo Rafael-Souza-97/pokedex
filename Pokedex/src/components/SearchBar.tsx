@@ -22,6 +22,7 @@ function SearchBar() {
         className='search-input'
         value={search}
         onChange={handleChange}
+        data-testid='search-bar'
       />
 
       <div className='search-logo'>

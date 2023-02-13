@@ -17,7 +17,7 @@ const Cards = () => {
         <Loading />
       ) : (
         filteredPokemon.results.length === 0 ? (
-          <div className='pokemon-search-no-results'>
+          <div className='pokemon-search-no-results' data-testid='no-results'>
             <h2>Desculpe, nenhum pokemon foi encontrado com o nome informado 🙁</h2>
           </div>
         ) : (
@@ -47,7 +47,8 @@ const Cards = () => {
                 </div>
               </div>
             </Link>
-          )))
+          ))
+        )
       )}
     </div>
   );

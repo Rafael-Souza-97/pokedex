@@ -5,7 +5,7 @@ import '../styles/Loading.css';
 const Loading = () => {
   return (
     <div className="loading-screen">
-      <div className="loading-container">
+      <div className="loading-container" data-testid='loading-logo'>
         <img src={pokeball} alt="pokeball-loading" className='loading-image' />
       </div>
     </div>

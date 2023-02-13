@@ -77,12 +77,12 @@ export interface IPokemonContextData {
   isLoading: boolean;
   totalPages: number;
   page: IPage;
+  search: string;
   setPage: React.Dispatch<React.SetStateAction<{
     page: number;
     limit: number;
     offset: number;
   }>>
-  search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
