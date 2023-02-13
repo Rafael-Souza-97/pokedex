@@ -9,6 +9,7 @@ import '../styles/Card.css';
 
 const Cards = () => {
   const { isLoading, filteredPokemon, searchResults, search } = useContext(PokemonsContext);
+
   
   if(!filteredPokemon || !filteredPokemon.results) {
     return null;
@@ -22,7 +23,7 @@ const Cards = () => {
       </div>
     );
   }
-
+  
   if (search.length === 0 && searchResults.results.length === 0) {
     return (
       <div className="grid-container">
