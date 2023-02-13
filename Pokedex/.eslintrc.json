@@ -32,6 +32,7 @@
     "rules": {
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/no-unused-vars": "warn",
+      "react/jsx-no-constructed-context-values": "off",
       "react/prop-types": "off",
       "quotes": ["error", "single"],
       "semi": ["error", "always"],

@@ -88,7 +88,9 @@ export default {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '\\.(css)$': 'jest-css-modules'
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -144,7 +146,7 @@ export default {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "jest-environment-jsdom",
+  testEnvironment: 'jest-environment-jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -174,12 +176,14 @@ export default {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.(t|j)sx?$": [
-      "@swc/jest",
+    '^.+\\.jsx?$': 'babel-jest',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': 'jest-transform-stub',
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
       {
         jsc: {
           parser: {
-            syntax: "typescript",
+            syntax: 'typescript',
             tsx: true,
             decorators: true,
           },
@@ -188,12 +192,12 @@ export default {
             legacyDecorator: true,
             decoratorMetadata: true,
             react: {
-              runtime: "automatic",
+              runtime: 'automatic',
             },
           },
         },
         module: {
-          type: "es6",
+          type: 'es6',
           noInterop: false,
         },
       },

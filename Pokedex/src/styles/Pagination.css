@@ -1,0 +1,63 @@
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  justify-content: flex-end;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  padding-right: 50px ;
+}
+
+.pagination-left-button,
+.pagination-right-button {
+  background: none;
+  padding: 3px 7px;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.pagination-left-button:hover,
+.pagination-right-button:hover {
+  background: DarkTurquoise;
+}
+
+.pagination-left-button:disabled,
+.pagination-right-button:disabled {
+  cursor: not-allowed;
+  background: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  opacity: 0.5;
+}
+
+.pagination-text {
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+
+  .pagination-left-button,
+  .pagination-right-button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .pagination-text {
+    font-size: 16px;
+  }
+}
