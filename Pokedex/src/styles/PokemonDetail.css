@@ -1,48 +1,89 @@
 .pokemon-detail-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
   align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 1200px;
+  justify-items: center;
+  margin: auto;
+}
+
+.pokemon-detail-container-image {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  align-items: center;
+  justify-items: center;
+  margin: 50px;
+}
+
+.pokemon-detail-card-container {
+  background-color: white;
+  box-shadow: 0px 0px 20px #888888;
+  padding: 40px;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-gap: 20px;
+  align-items: center;
 }
 
 .pokemon-detail-image {
   width: 200px;
   height: 200px;
-  object-fit: contain;
-  margin: 2rem 0;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
 }
 
-.pokemon-detail-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin: 2rem 0;
+.pokemon-detail-id {
+  font-size: medium;
 }
 
-.pokemon-detail-item {
-  width: calc(33.33% - 1rem);
+.pokemon-detail-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: xx-large;
 }
 
+.pokemon-detail-height-weight {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.pokemon-detail-types,
+.pokemon-detail-skills,
+.pokemon-detail-stats,
 .pokemon-detail-moves {
-  width: 100%;
-  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-table {
+.pokemon-detail-types h4,
+.pokemon-detail-skills h4,
+.pokemon-detail-stats h4,
+.pokemon-detail-moves h4 {
+  margin-bottom: 20px;
+}
+
+.pokemon-detail-moves table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-thead {
+.pokemon-detail-moves table thead tr {
+  background-color: #dddddd;
+}
+
+.pokemon-detail-moves table tbody tr {
   background-color: white;
 }
 
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  text-align: left;
+.pokemon-detail-moves table td {
+  padding: 10px;
+  border: 1px solid #dddddd;
+  text-align: center;
 }

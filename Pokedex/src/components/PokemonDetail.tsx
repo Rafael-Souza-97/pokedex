@@ -26,17 +26,16 @@ const PokemonDetail = () => {
     <div className='pokemon-detail-container'>
       {details && (
         <div className='pokemon-detail-card-container' >
-          <div>
+          <div className='pokemon-detail-container-image'>
+            <h3 className='pokemon-detail-title'>
+              {details.name[0].toUpperCase() + details.name.substring(1)}
+            </h3>
             <img
               src={details.sprites.front_default}
               alt={details.name}
               className='pokemon-detail-image' />
 
             <p className='pokemon-detail-id'>Nº: {details.id}</p>
-
-            <h3 className='pokemon-detail-title'>
-              {details.name[0].toUpperCase() + details.name.substring(1)}
-            </h3>
           </div>
 
           <div className='pokemon-detail-height-weight'>
@@ -67,7 +66,7 @@ const PokemonDetail = () => {
               ))}
             </div>
 
-            <div className='pokemon-detail-moves'>
+            {/* <div className='pokemon-detail-moves'>
               <h4>Movimentos:</h4>
               <table>
                 <thead>
@@ -82,7 +81,7 @@ const PokemonDetail = () => {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </div> */}
           </div>
         </div>
       )}
