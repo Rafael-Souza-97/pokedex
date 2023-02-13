@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import sadPokemon from '../assets/sad-pokemon.jpg';
 import error404 from '../assets/404.png';
-import '../styles/NotFound.css';
+import '../styles/PageNotFound.css';
 
 const NotFound: React.FC = () => {
   return (
