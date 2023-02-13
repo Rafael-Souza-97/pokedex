@@ -1,17 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { PokemonsContext } from '../context';
 import '../styles/SearchBar.css';
 
 function SearchBar() {
-  const { search, setSearch } = useContext(PokemonsContext);
+  const { setSearch } = useContext(PokemonsContext);
+  const [inputValue, setInputValue] = useState('');
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    setInputValue(e.target.value);
   };
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSearch(inputValue);
   };
   
   return (
@@ -20,13 +22,15 @@ function SearchBar() {
         type='text'
         placeholder='Pesquise por um Pokémon'
         className='search-input'
-        value={search}
+        value={inputValue}
         onChange={handleChange}
         data-testid='search-bar'
       />
 
       <div className='search-logo'>
-        <AiOutlineSearch className='search-icon' />
+        <button type="submit" className="submit-button">
+          <AiOutlineSearch className='search-icon' />
+        </button>
       </div>
     </form>
   );

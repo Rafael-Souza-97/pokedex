@@ -19,12 +19,6 @@ export const getPokemonData = async (url: string) => {
   }
 };
 
-export const searchPokemon = async (pokemon: string) => {
-  try {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-    const response = await fetch(url);
-    return await response.json();
-  } catch (error) {
-    throw new Error(`Ocorreu um erro na requisição: ${error}`);
-  }
+export const fetch1000Pokemons = async () => {
+  return await getPokemonList(1000, 0);
 };

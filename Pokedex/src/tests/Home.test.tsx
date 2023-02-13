@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { IPokemonContextData, PokemonsContext } from '../context/index';
 import { mockPokemon } from './mocks/Pokemon';
 import { Router } from 'react-router-dom';
@@ -16,6 +16,7 @@ const history = createBrowserHistory();
 const filteredPokemon = mockPokemon;
 
 const valueLoadingOn = {
+  searchResults: mockPokemon,
   isLoading: true,
   filteredPokemon,
   totalPages: 0,
@@ -33,6 +34,7 @@ const page1LoadingOff  = {
   isLoading: false,
   filteredPokemon,
   totalPages: 20,
+  searchResults: mockPokemon,
   page: { 
     page: 1,
     limit: 50,
@@ -46,6 +48,7 @@ const page1LoadingOff  = {
 const page2LoadingOff = {
   isLoading: false,
   filteredPokemon,
+  searchResults: mockPokemon,
   totalPages: 20,
   page: { 
     page: 2,
@@ -65,11 +68,17 @@ const emptyFilteredPokemonLoadingOff = {
     previous: null,
     count: 0
   },
+  searchResults: {
+    results: [],
+    next: null,
+    previous: null,
+    count: 0
+  },
   search: '',
-  totalPages: 1,
+  totalPages: 20,
   page: {
     page: 1,
-    limit: 10,
+    limit: 0,
     offset: 0
   },
   setPage: jest.fn(),
@@ -79,6 +88,7 @@ const emptyFilteredPokemonLoadingOff = {
 const mockContextData: IPokemonContextData = {
   isLoading: false,
   filteredPokemon: mockPokemon,
+  searchResults: mockPokemon,
   search: '',
   totalPages: 1,
   page: { page: 1, limit: 10, offset: 0 },
@@ -171,16 +181,17 @@ describe('Teste da Página Home', () => {
     expect(name).toBeInTheDocument();
   });
   
-  it('Deveria mostrar uma mensagem caso não enconrte nenhum pokemon', () => {
+  it('Deveria mostrar uma mensagem caso não enconrte nenhum pokemon', async () => {
     const { getByTestId } = render(
       <Router history={history}>
-        <PokemonsContext.Provider value={emptyFilteredPokemonLoadingOff}>
+        <PokemonsContext.Provider value={ emptyFilteredPokemonLoadingOff}>
           <Home />
         </PokemonsContext.Provider>
       </Router>
     );
-    const noResultsElement = getByTestId('no-results');
-    expect(noResultsElement).toBeInTheDocument();
+
+
+    expect(getByTestId('no-results')).toBeInTheDocument();
   });
 
   it('Deveria renderizar o componente de Paginação', () => {
@@ -198,7 +209,7 @@ describe('Teste da Página Home', () => {
   it('Deveria mudar de página ao clicar no botão de paginação direito', () => {
 
     const { getByTestId } = render(
-      <Router history={createBrowserHistory()}>
+      <Router history={history}>
         <PokemonsContext.Provider value={page1LoadingOff}>
           <Pagination />
         </PokemonsContext.Provider>

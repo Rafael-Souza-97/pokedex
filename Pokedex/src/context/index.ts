@@ -74,6 +74,7 @@ export interface IPage {
 
 export interface IPokemonContextData {
   filteredPokemon: IPokemon;
+  searchResults: IPokemon;
   isLoading: boolean;
   totalPages: number;
   page: IPage;
