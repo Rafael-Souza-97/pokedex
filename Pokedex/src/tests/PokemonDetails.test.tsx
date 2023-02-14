@@ -28,8 +28,8 @@ jest.mock('../services/FetchPokemons', () => ({
   getPokemonData: jest.fn(() => Promise.resolve(mockPokemon)),
 }));
 
-describe('PokemonDetail', () => {
-  test('renders pokemon details correctly', async () => {
+describe('Teste da Página dos Detalhes do Pokemon', () => {
+  test('Deveria renderizar o Pokemon e seus atributos', async () => {
     const { getByText, getByAltText } = render(
       <MemoryRouter initialEntries={['/1']}>
         <Route path='pokemon/:id'>
