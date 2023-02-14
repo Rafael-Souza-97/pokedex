@@ -97,6 +97,7 @@ export const PokemonsContextProvider = ({ children }: IProps) => {
       page,
       search,
       searchResults,
+      responseSearch,
       setPage,
       setSearch
     }}>

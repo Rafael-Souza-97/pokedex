@@ -7,7 +7,11 @@ import sadPokemon from '../assets/sad-pokemon.png';
 import TypeBadge from './TypeBadge';
 import '../styles/Card.css';
 
-const Cards = () => {
+type CardsProps = {
+  pokemon?: IPokemonDetail;
+};
+
+const Cards =  ({ pokemon }: CardsProps) => {
   const { isLoading, filteredPokemon, searchResults, search } = useContext(PokemonsContext);
 
   if(!filteredPokemon || !filteredPokemon.results) {
