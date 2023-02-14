@@ -4,12 +4,17 @@ import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header: React.FC = () => {
+  const handleLogoClick = () => {
+    window.location.href = '/';
+    window.location.reload();
+  };
+  
   return (
     <header className="header">
       <div className='logo'>
-        <Link to='/'>
+        <Link to='/' onClick={handleLogoClick}>
           <div className="logo">
-            <img src={ pokemonLogo } alt="Pokemon logo" />
+            <img src={ pokemonLogo } alt="Pokemon logo"/>
           </div>
         </Link>
       </div>

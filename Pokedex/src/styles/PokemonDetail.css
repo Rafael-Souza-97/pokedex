@@ -1,10 +1,10 @@
 .pokemon-detail-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
   align-items: center;
   justify-items: center;
   margin: auto;
+  position: relative; /* adicionado */
 }
 
 .pokemon-detail-container-image {
@@ -13,6 +13,11 @@
   grid-gap: 20px;
   align-items: center;
   justify-items: center;
+}
+
+.favorite-container {
+  float: right;
+  margin-top: -10px; /* ajuste conforme necessário */
 }
 
 .pokemon-detail-card-container {
@@ -160,6 +165,15 @@
 .pokemon-detail-skills h4,
 .pokemon-detail-stats h4 {
   margin-bottom: 20px;
+}
+
+.hearts {
+  background-color: transparent;
+  border: none;
+}
+
+.hearts img {
+  max-width: 2rem;
 }
 
 @media (max-width: 600px) {

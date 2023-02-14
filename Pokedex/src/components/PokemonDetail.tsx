@@ -2,36 +2,84 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IPokemonDetail } from '../interfaces/IPokemonDetail';
 import { getPokemonData } from '../services/FetchPokemons';
-import TypeBadge from './TypeBadge';
-import '../styles/PokemonDetail.css';
 import Loading from './Loading';
+import TypeBadge from './TypeBadge';
 import StatsBadge from './StatsBadge';
+import unfavoriteHeart from '../assets/unfavorite.png';
+import favoriteHeart from '../assets/favorite.png';
+import '../styles/PokemonDetail.css';
+import Favorites from '../pages/Favorites';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState<IPokemonDetail | undefined>(undefined);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { id } = useParams<{ id: string }>();
 
   const DETAILS_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  const FAVORITES_KEY = 'FavoritesPokemons';
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
+  function setFavoritesPokemons() {
+    const favorites = localStorage.getItem('FavoritesPokemons');
+    if (!favorites || favorites === '') {
+      localStorage.setItem('FavoritesPokemons', JSON.stringify([]));
+    }
+  }
+
+  const checkIsFavorite = (id: string): void => {
+    const favorites: string[] = JSON.parse(localStorage.getItem('FavoritesPokemons') || '[]');
+    setIsFavorite(favorites.includes(id));
+  };
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
+      setFavoritesPokemons();
 
       const responseDetails = await getPokemonData(DETAILS_URL);
       setDetails(responseDetails);
 
       setLoading(false);
     }
+  
     fetchData();
-  }, [id]);
     
+    checkIsFavorite(id);
+  }, [id]);
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+  
+    if (isFavorite) {
+      if (!favorites.includes(id)) {
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites, id]));
+      }
+    } else {
+      const updatedFavorites = favorites.filter((favoriteId: string) => favoriteId !== id);
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
+    }
+  }, [isFavorite]);
+
+
   if (loading) return <Loading />;
 
   return (
     <div className='pokemon-detail-container'>
       {details && (
         <div className='pokemon-detail-card-container' >
+          <div className='favorite-container'>
+            <button onClick={toggleFavorite} className="hearts">
+              {isFavorite
+                ? <img src={favoriteHeart} alt="Favorite" />
+                : <img src={unfavoriteHeart} alt="Unfavorite" />
+              }
+            </button>
+          </div>
+
           <div className='pokemon-detail-container-image'>
             <p className='pokemon-detail-id'>Nº: {details.id}</p>
           

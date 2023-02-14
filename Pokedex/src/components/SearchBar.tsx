@@ -13,7 +13,12 @@ function SearchBar() {
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSearch(inputValue);
+    if (inputValue.trim() === '') {
+      window.location.href = '/';
+      window.location.reload();
+    } else {
+      setSearch(inputValue);
+    }
   };
   
   return (
