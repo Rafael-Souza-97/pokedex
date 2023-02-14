@@ -1,48 +1,216 @@
 .pokemon-detail-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
   align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 1200px;
+  justify-items: center;
+  margin: auto;
+}
+
+.pokemon-detail-container-image {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.pokemon-detail-card-container {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 40px;
+  width: 70%;
+  border-radius: 30PX;
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-gap: 20px;
+  align-items: center;
 }
 
 .pokemon-detail-image {
   width: 200px;
   height: 200px;
-  object-fit: contain;
-  margin: 2rem 0;
+  border-radius: 50%;
+  display: block;
 }
 
-.pokemon-detail-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin: 2rem 0;
+.pokemon-detail-id {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  text-align: center;
+  font-size: smaller;
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 
-.pokemon-detail-item {
-  width: calc(33.33% - 1rem);
+.pokemon-detail-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: xx-large;
 }
 
-.pokemon-detail-moves {
-  width: 100%;
-  margin: 2rem 0;
+.pokemon-detail-height-weight-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.pokemon-detail-height-weight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 60px;
+  padding: 3px;
+  border-radius: 30px;
 }
 
-thead {
-  background-color: white;
+.pokemon-detail-skills,
+.pokemon-detail-height,
+.pokemon-detail-weight {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: smaller;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 15px;
+  padding: 3px;
+  border-radius: 30px;
 }
 
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  text-align: left;
+.skills-title,
+.pokemon-detail-height p,
+.pokemon-detail-weight p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: large;
+}
+
+.skills-values p,
+.heigth-value,
+.weigth-value {
+  background-color: rgb(244, 244, 244);
+  padding: 20px 40px;
+  border-radius: 40px;
+  text-transform: capitalize;
+}
+
+.skills-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-gap: 10px
+}
+
+.pokemon-detail-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.pokemon-detail-stats {
+  display: grid;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.pokemon-detail-stats h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: large;
+}
+
+.stats-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  justify-items: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.stats-details {
+  background-color: rgb(244, 244, 244);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  border-radius: 30px;
+  padding-bottom: 20px; 
+}
+
+.pokemon-stats-name {
+  border-radius: 100%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.pokemon-stats-number{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.pokemon-detail-skills h4,
+.pokemon-detail-stats h4 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .pokemon-detail-card-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .pokemon-detail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-detail-skills{
+    margin-top: 50px;
+  }
+
+  .pokemon-detail-height-weight-container,
+  .pokemon-detail-types {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .pokemon-detail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-detail-height-weight {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  .pokemon-detail-types {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .skills-values {
+    grid-template-columns: 1fr;
+  }
 }

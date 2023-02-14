@@ -19,6 +19,11 @@ export const getPokemonData = async (url: string) => {
   }
 };
 
-export const fetch1000Pokemons = async () => {
-  return await getPokemonList(1000, 0);
+export const getPokemonNameAndURL = async () => {
+  try {
+    const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1000');
+    return response.data;
+  } catch (error) {
+    throw new Error(`Ocorreu um erro na requisição: ${error}`);
+  }
 };

@@ -5,6 +5,13 @@ export interface IPokemonData {
   url: string;
 }
 
+export interface ISearchPokemonData {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: IPokemonData[];
+}
+
 export interface IPokemon {
   count: number;
   next: string | null;
