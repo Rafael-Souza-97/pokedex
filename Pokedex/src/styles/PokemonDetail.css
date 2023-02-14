@@ -20,7 +20,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   padding: 40px;
   width: 70%;
-border-radius: 30PX;
+  border-radius: 30PX;
   display: grid;
   grid-template-columns: 1fr ;
   grid-gap: 20px;
@@ -157,9 +157,60 @@ border-radius: 30PX;
   font-weight: 400;
 }
 
-
 .pokemon-detail-skills h4,
 .pokemon-detail-stats h4 {
   margin-bottom: 20px;
 }
 
+@media (max-width: 600px) {
+  .pokemon-detail-card-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .pokemon-detail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-detail-skills{
+    margin-top: 50px;
+  }
+
+  .pokemon-detail-height-weight-container,
+  .pokemon-detail-types {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .pokemon-detail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-detail-height-weight {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  .pokemon-detail-types {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .skills-values {
+    grid-template-columns: 1fr;
+  }
+}

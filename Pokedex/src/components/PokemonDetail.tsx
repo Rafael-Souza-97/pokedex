@@ -5,16 +5,14 @@ import { getPokemonData } from '../services/FetchPokemons';
 import TypeBadge from './TypeBadge';
 import '../styles/PokemonDetail.css';
 import Loading from './Loading';
-import StatsBadge from './Stats';
+import StatsBadge from './StatsBadge';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState<IPokemonDetail | undefined>(undefined);
-  const [evolutions, setEvolutions] = useState(undefined);
   const { id } = useParams<{ id: string }>();
 
   const DETAILS_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const EVOLUTIONS_URL = `https://pokeapi.co/api/v2/evolution-chain/${id}`;
 
   useEffect(() => {
     async function fetchData() {
@@ -22,16 +20,11 @@ const PokemonDetail = () => {
 
       const responseDetails = await getPokemonData(DETAILS_URL);
       setDetails(responseDetails);
-      
-      const responseEvolutions = await getPokemonData(EVOLUTIONS_URL);
-      setEvolutions(responseEvolutions);
 
       setLoading(false);
     }
     fetchData();
   }, [id]);
-
-  console.log(evolutions);
     
   if (loading) return <Loading />;
 
