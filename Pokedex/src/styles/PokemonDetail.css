@@ -68,8 +68,7 @@ border-radius: 30PX;
 
 .pokemon-detail-skills,
 .pokemon-detail-height,
-.pokemon-detail-weight
- {
+.pokemon-detail-weight {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   text-align: center;
@@ -81,6 +80,14 @@ border-radius: 30PX;
   grid-gap: 15px;
   padding: 3px;
   border-radius: 30px;
+}
+
+.skills-title,
+.pokemon-detail-height p,
+.pokemon-detail-weight p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: large;
 }
 
 .skills-values p,
@@ -102,7 +109,8 @@ border-radius: 30PX;
 .pokemon-detail-types {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+  justify-items: center;
+  align-items: center;
 }
 
 .pokemon-detail-stats {
@@ -111,12 +119,18 @@ border-radius: 30PX;
   margin-top: 20px;
 }
 
+.pokemon-detail-stats h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: large;
+}
+
 .stats-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
   justify-items: center;
   align-items: center;
-  padding: 3px;
   border-radius: 30px;
 }
 
@@ -126,26 +140,26 @@ border-radius: 30PX;
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
-  padding: 5px;
   border-radius: 30px;
+  padding-bottom: 20px; 
 }
 
 .pokemon-stats-name {
-  border-radius: 50%;
+  border-radius: 100%;
   font-weight: bold;
-  margin-bottom: 5px ;
-  padding: 8px;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
-.pokemon-detail-moves {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.pokemon-stats-number{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
+
 
 .pokemon-detail-skills h4,
-.pokemon-detail-stats h4,
-.pokemon-detail-moves h4 {
+.pokemon-detail-stats h4 {
   margin-bottom: 20px;
 }
 

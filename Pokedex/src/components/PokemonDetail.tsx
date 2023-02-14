@@ -5,25 +5,35 @@ import { getPokemonData } from '../services/FetchPokemons';
 import TypeBadge from './TypeBadge';
 import '../styles/PokemonDetail.css';
 import Loading from './Loading';
+import StatsBadge from './Stats';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState<IPokemonDetail | undefined>(undefined);
+  const [evolutions, setEvolutions] = useState(undefined);
   const { id } = useParams<{ id: string }>();
+
+  const DETAILS_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  const EVOLUTIONS_URL = `https://pokeapi.co/api/v2/evolution-chain/${id}`;
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const response = await getPokemonData(`https://pokeapi.co/api/v2/pokemon/${id}`);
-      setDetails(response);
+
+      const responseDetails = await getPokemonData(DETAILS_URL);
+      setDetails(responseDetails);
+      
+      const responseEvolutions = await getPokemonData(EVOLUTIONS_URL);
+      setEvolutions(responseEvolutions);
+
       setLoading(false);
     }
     fetchData();
   }, [id]);
 
+  console.log(evolutions);
+    
   if (loading) return <Loading />;
-
-  console.log(details);
 
   return (
     <div className='pokemon-detail-container'>
@@ -74,7 +84,7 @@ const PokemonDetail = () => {
             </div>
 
             <div className='pokemon-detail-skills'>
-              <div>
+              <div className='skills-title'>
                 <p><strong>Habilidades</strong></p>
               </div>
 
@@ -87,37 +97,22 @@ const PokemonDetail = () => {
           </div>
 
           <div className='pokemon-detail-stats'>
-            <h4>Estatísticas:</h4>
+            <h4>Estatísticas</h4>
             <div className='stats-container'>
               {details.stats.map((stat) => (
                 <div key={stat.stat.name} className='stats-details'>
                   <div className='pokemon-stats-name'>
-                    {stat.stat.name}
+                    <StatsBadge
+                      key={stat.stat.name}
+                      text={stat.stat.name}
+                    />
                   </div>
-                  <div>
+                  <div className='pokemon-stats-number'>
                     {stat.base_stat}
                   </div>
                 </div>
               ))}
             </div>
-
-
-            {/* <div className='pokemon-detail-moves'>
-              <h4>Movimentos:</h4>
-              <table>
-                <thead>
-                  <tr>
-                  </tr>
-                </thead>
-                <tbody>
-                  {details.moves.map((move) => (
-                    <tr key={move.move.name}>
-                      <td>{move.move.name}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div> */}
           </div>
         </div>
       )}
