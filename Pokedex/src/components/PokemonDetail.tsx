@@ -2,15 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IPokemonDetail } from '../interfaces/IPokemonDetail';
 import { getPokemonData } from '../services/FetchPokemons';
-import TypeBadge from './TypeBadge';
-import '../styles/PokemonDetail.css';
 import Loading from './Loading';
+import TypeBadge from './TypeBadge';
 import StatsBadge from './StatsBadge';
+import unfavoriteHeart from '../assets/unfavorite.png';
+import favoriteHeart from '../assets/favorite.png';
+import '../styles/PokemonDetail.css';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState<IPokemonDetail | undefined>(undefined);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { id } = useParams<{ id: string }>();
+
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
 
   const DETAILS_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
@@ -32,6 +40,15 @@ const PokemonDetail = () => {
     <div className='pokemon-detail-container'>
       {details && (
         <div className='pokemon-detail-card-container' >
+          <div className='favorite-container'>
+            <button onClick={toggleFavorite} className="hearts">
+              {isFavorite
+                ? <img src={unfavoriteHeart} alt="Unfavorite" />
+                : <img src={favoriteHeart} alt="Favorite" />
+              }
+            </button>
+          </div>
+
           <div className='pokemon-detail-container-image'>
             <p className='pokemon-detail-id'>Nº: {details.id}</p>
           
