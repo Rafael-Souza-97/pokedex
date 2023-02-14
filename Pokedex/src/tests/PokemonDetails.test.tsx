@@ -59,6 +59,5 @@ describe('Teste da Página dos Detalhes do Pokemon', () => {
       expect(getByText(/speed/i)).toBeInTheDocument();
       expect(getByText(/45/i)).toBeInTheDocument();
     });
-
   });
 });

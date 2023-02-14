@@ -8,7 +8,6 @@ import StatsBadge from './StatsBadge';
 import unfavoriteHeart from '../assets/unfavorite.png';
 import favoriteHeart from '../assets/favorite.png';
 import '../styles/PokemonDetail.css';
-import Favorites from '../pages/Favorites';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);

@@ -6,7 +6,6 @@ import '../styles/Header.css';
 const Header: React.FC = () => {
   const handleLogoClick = () => {
     window.location.href = '/';
-    window.location.reload();
   };
   
   return (
