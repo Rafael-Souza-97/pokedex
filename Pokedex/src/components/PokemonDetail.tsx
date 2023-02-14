@@ -48,7 +48,9 @@ const PokemonDetail = () => {
             <img
               src={details.sprites.front_default}
               alt={details.name}
-              className='pokemon-detail-image' />
+              className='pokemon-detail-image'
+              data-testid={'pokemon-image'}
+            />
           </div>
               
           <div className='pokemon-detail-height-weight-container'>

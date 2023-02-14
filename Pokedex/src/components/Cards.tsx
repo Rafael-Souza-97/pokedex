@@ -10,9 +10,6 @@ import '../styles/Card.css';
 const Cards = () => {
   const { isLoading, filteredPokemon, searchResults, search } = useContext(PokemonsContext);
 
-  console.log(filteredPokemon);
-
-  
   if(!filteredPokemon || !filteredPokemon.results) {
     return null;
   }
