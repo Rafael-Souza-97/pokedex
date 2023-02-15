@@ -59,6 +59,7 @@ input:focus {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    width: 80%;
   }
 
   .search-icon {

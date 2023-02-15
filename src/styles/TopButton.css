@@ -1,9 +1,10 @@
 .to-top-button {
   border-color: transparent;
   position: fixed;
-  top: 86%;
+  top: 88%;
   right: 3%;
   background-color: rgb(219, 219, 219);
+  padding: 5px 4px 5px 4px;
   border-radius: 50%;
 }
 
