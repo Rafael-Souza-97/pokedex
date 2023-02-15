@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
@@ -8,16 +8,26 @@ import Footer from '../components/Footer';
 import '../styles/Home.css';
 
 function Home() {
+  const [showFooter, setShowFooter] = useState(true);
+
+  const handleSearch = (searchTerm: string) => {
+    if (searchTerm) {
+      setShowFooter(false);
+    } else {
+      setShowFooter(true);
+    }
+  };
+
   return (
     <div className='home'>
       <Header />
       <div className='search-pagination'>
-        <SearchBar />
+        <SearchBar onSearch={handleSearch} />
         <Pagination />
       </div>
       <Cards />
       <TopButton />
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 }

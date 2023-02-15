@@ -3,7 +3,11 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { PokemonsContext } from '../context';
 import '../styles/SearchBar.css';
 
-function SearchBar() {
+type SearchBarProps = {
+  onSearch: (value: string) => void;
+};
+
+function SearchBar({ onSearch } : SearchBarProps) {
   const { setSearch } = useContext(PokemonsContext);
   const [inputValue, setInputValue] = useState('');
   
@@ -18,6 +22,7 @@ function SearchBar() {
       window.location.reload();
     } else {
       setSearch(inputValue);
+      onSearch(inputValue);
     }
   };
   
