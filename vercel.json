@@ -1,5 +1,5 @@
 {
   "builds": [
-    { "src": "Pokedex/src/**", "use": "@vercel/static" }
+    { "src": "Pokedex/**", "use": "@vercel/static" }
   ]
 }
