@@ -10,13 +10,21 @@ body {
 .search-pagination {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   align-items: center;
   padding: 20px;
   margin-bottom: 75px;
+  align-content: center;
+  flex-wrap: wrap;
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
+  .search-pagination {
     flex-direction: column;
-    align-items: flex-start;
+    align-content: center;
+  }
+  .searchbar {
+    width: 100%;
   }
 }

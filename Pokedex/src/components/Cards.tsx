@@ -1,17 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { PokemonsContext } from '../context/index';
-import { IPokemonDetail } from '../interfaces/IPokemonDetail';
+import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
-import sadPokemon from '../assets/sad-pokemon.png';
 import TypeBadge from './TypeBadge';
+import sadPokemon from '../assets/sad-pokemon.png';
 import '../styles/Card.css';
 
-type CardsProps = {
-  pokemon?: IPokemonDetail;
-};
-
-const Cards =  ({ pokemon }: CardsProps) => {
+const Cards =  () => {
   const { isLoading, filteredPokemon, searchResults, search } = useContext(PokemonsContext);
 
   if(!filteredPokemon || !filteredPokemon.results) {
@@ -33,7 +29,7 @@ const Cards =  ({ pokemon }: CardsProps) => {
         { isLoading ? (
           <Loading />
         ) : (
-          filteredPokemon.results.map((poke: IPokemonDetail, index) => (
+          filteredPokemon.results.map((poke: IPokemonDetail, index: number) => (
             <Link
               to={`/pokemon/${poke.id}`}
               key={index}
@@ -69,7 +65,7 @@ const Cards =  ({ pokemon }: CardsProps) => {
         { isLoading ? (
           <Loading />
         ) : (
-          searchResults.results.map((poke: IPokemonDetail, index) => (
+          searchResults.results.map((poke: IPokemonDetail, index: number) => (
             <Link
               to={`/pokemon/${poke.id}`}
               key={index}

@@ -1,8 +1,9 @@
 import React from 'react';
-import Cards from '../components/Cards';
 import Header from '../components/Header';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
+import Cards from '../components/Cards';
+import Footer from '../components/Footer';
 import '../styles/Home.css';
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
         <Pagination />
       </div>
       <Cards />
+      <Footer />
     </div>
   );
 }

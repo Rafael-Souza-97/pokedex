@@ -1,35 +1,33 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
-import { MemoryRouter, Route } from 'react-router-dom';
+import { MemoryRouter, Route, Router } from 'react-router-dom';
 import PokemonDetail from '../pages/PokemonDetail';
+import { mockPokemonData } from './mocks/Pokemon';
+import { PokemonsContext } from '../context';
+import { page1LoadingOff } from './mocks/APIMocks';
+import { createBrowserHistory } from 'history';
 
-const mockPokemon = {
-  id: 1,
-  name: 'bulbasaur',
-  types: [
-    { type: { name: 'grass' } },
-    { type: { name: 'poison' } },
-  ],
-  sprites: { front_default: 'bulbasaur.png' },
-  height: 7,
-  weight: 69,
-  abilities: [{ ability: { name: 'chlorophyll' } }],
-  stats: [
-    { stat: { name: 'hp' }, base_stat: 45 },
-    { stat: { name: 'attack' }, base_stat: 49 },
-    { stat: { name: 'defense' }, base_stat: 49 },
-    { stat: { name: 'special-attack' }, base_stat: 65 },
-    { stat: { name: 'special-defense' }, base_stat: 65 },
-    { stat: { name: 'speed' }, base_stat: 45 },
-  ],
-};
+const history = createBrowserHistory();
 
 jest.mock('../services/FetchPokemons', () => ({
-  getPokemonData: jest.fn(() => Promise.resolve(mockPokemon)),
+  getPokemonData: jest.fn(() => Promise.resolve(mockPokemonData)),
 }));
 
 describe('Teste da Página dos Detalhes do Pokemon', () => {
-  test('Deveria renderizar o Pokemon e seus atributos', async () => {
+  it('Deveria renderizar o Header', async () => {
+    const { getByTestId } = render(
+      <Router history={history}>
+        <PokemonsContext.Provider value={ page1LoadingOff }>
+          <PokemonDetail />
+        </PokemonsContext.Provider>
+      </Router>,
+    );
+    waitFor(() => {
+      expect(getByTestId('header')).toBeInTheDocument();
+    });
+  });
+
+  it('Deveria renderizar o Pokemon e seus atributos', async () => {
     const { getByText, getByAltText } = render(
       <MemoryRouter initialEntries={['/1']}>
         <Route path='pokemon/:id'>
@@ -59,6 +57,19 @@ describe('Teste da Página dos Detalhes do Pokemon', () => {
       expect(getByText(/speed/i)).toBeInTheDocument();
       expect(getByText(/45/i)).toBeInTheDocument();
     });
+  });
 
+  it('Deveria renderizar o Footer', async () => {
+    const { getByTestId } = render(
+      <Router history={history}>
+        <PokemonsContext.Provider value={ page1LoadingOff }>
+          <PokemonDetail />
+        </PokemonsContext.Provider>
+      </Router>,
+    );
+    
+    waitFor(()=> {
+      expect(getByTestId('footer')).toBeInTheDocument();
+    });
   });
 });

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { IPokemonDetail } from '../interfaces/IPokemonDetail';
 import { getPokemonData } from '../services/FetchPokemons';
+import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
 import TypeBadge from './TypeBadge';
 import StatsBadge from './StatsBadge';
 import unfavoriteHeart from '../assets/unfavorite.png';
 import favoriteHeart from '../assets/favorite.png';
 import '../styles/PokemonDetail.css';
-import Favorites from '../pages/Favorites';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);

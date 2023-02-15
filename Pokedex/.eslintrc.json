@@ -35,7 +35,7 @@
       "react/jsx-no-constructed-context-values": "off",
       "react/prop-types": "off",
       "quotes": ["error", "single"],
-      "semi": ["error", "always"],
+      "semi": ["error"],
       "no-console": "warn",
       "no-extra-semi": "error",
       "indent": [

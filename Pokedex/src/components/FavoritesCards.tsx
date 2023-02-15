@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import sadPokemon from '../assets/sad-pokemon.png';
-import '../styles/Card.css';
-import { getPokemonData } from '../services/FetchPokemons';
-import { IPokemonDetail, PokemonsContext } from '../context';
 import { Link } from 'react-router-dom';
+import { getPokemonData } from '../services/FetchPokemons';
+import { PokemonsContext } from '../context';
+import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
 import TypeBadge from './TypeBadge';
+import sadPokemon from '../assets/sad-pokemon.png';
+import '../styles/Card.css';
 
 function FavoritesCards() {
   const { isLoading } = useContext(PokemonsContext);
@@ -27,8 +28,6 @@ function FavoritesCards() {
   useEffect(() => {
     fetchURLFavoritePokemons();
   }, []);
-
-  console.log(localStorage);
 
   if (favoriteIds.length === 0) {
     return (

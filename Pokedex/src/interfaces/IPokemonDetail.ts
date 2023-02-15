@@ -1,4 +1,4 @@
-export interface IPokemonDetail {
+export default interface IPokemonDetail {
   abilities: Array<{
     ability: { name: string; url: string };
     is_hidden: boolean;

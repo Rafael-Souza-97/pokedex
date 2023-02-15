@@ -17,15 +17,16 @@
 
 .favorite-container {
   float: right;
-  margin-top: -10px; /* ajuste conforme necessário */
+  margin-top: -10px;
 }
 
 .pokemon-detail-card-container {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  padding: 40px;
+  padding: 20px 30px 60px 30px;
   width: 70%;
-  border-radius: 30PX;
+  border-radius: 20px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr ;
   grid-gap: 20px;
@@ -178,7 +179,7 @@
 
 @media (max-width: 600px) {
   .pokemon-detail-card-container {
-    width: 90%;
+    width: 70%;
     padding: 20px;
   }
 

@@ -1,4 +1,5 @@
 node_modules/
+src/interfaces/
 config/
 *.config.ts
 *.config.js

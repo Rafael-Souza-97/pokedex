@@ -1,0 +1,25 @@
+.footer-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+  text-align: center;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.footer-text a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  opacity: 85%;
+}
+
+.footer-text a:hover {
+  color: rgb(65, 55, 251);
+  font-weight: 600;
+  opacity: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-text {
+    font-size: 14px;
+  }
+}
