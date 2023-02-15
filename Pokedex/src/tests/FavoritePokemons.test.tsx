@@ -4,12 +4,26 @@ import userEvent from '@testing-library/user-event';
 import FavoritesCards from '../components/FavoritesCards';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
+import { PokemonsContext } from '../context';
+import { page1LoadingOff } from './mocks/APIMocks';
 
 const history = createMemoryHistory();
 
 describe('FavoritesCards', () => {
   beforeEach(() => {
     localStorage.clear();
+  });
+  it('Deveria renderizar o Header', async () => {
+    const { getByTestId } = render(
+      <Router history={history}>
+        <PokemonsContext.Provider value={ page1LoadingOff }>
+          <FavoritesCards />
+        </PokemonsContext.Provider>
+      </Router>,
+    );
+    waitFor(()=> {
+      expect(getByTestId('header')).toBeInTheDocument();
+    });
   });
 
   test('Deveria renderizar o card do pokemon favorito', async () => {

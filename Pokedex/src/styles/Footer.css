@@ -3,7 +3,6 @@
   font-size: large;
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
   background-color: transparent;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .footer-text a:hover {
-  color: DarkTurquoise;
+  color: rgb(65, 55, 251);
   font-weight: 600;
   opacity: 100%;
 }

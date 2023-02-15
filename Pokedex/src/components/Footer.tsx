@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 
 const Footer = () => {
   return (
-    <p className="footer-text">
+    <p className="footer-text" data-testid={'footer'}>
         Criado por{' '}
       <a href="https://github.com/Rafael-Souza-97" target="_blank" rel="noreferrer">
         <span className="rafael">Rafael Souza</span>

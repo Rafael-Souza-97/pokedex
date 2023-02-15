@@ -1,7 +1,7 @@
 .search-container {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 50%;
   height: 45px;
   margin-bottom: 30px;
   border-radius: 25px;
@@ -51,22 +51,32 @@ input:focus {
   
 .search-icon {
   font-size: 25px;
+  margin-left: 0;
 }
 
 @media only screen and (max-width: 768px) {
-  .search-container{
-    max-width: 80%;
-    height: 40px;
+  .search-container {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
   }
 
   .search-icon {
-    font-size: 20px;
+    font-size: 18px;
+    margin-left: 0;
   }
 
   .search-input {
-    font-size: 18px;
-    padding: 0px 0px 0px 15px;
+    font-size: 14px;
+    padding: 10px 10px 10px 20px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .search-input::placeholder {
+    font-size: 12px;
   }
   
   .submit-button {

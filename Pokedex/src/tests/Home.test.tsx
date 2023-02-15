@@ -22,6 +22,18 @@ const history = createBrowserHistory();
 describe('Teste da Página Home', () => {
   afterEach(cleanup);
 
+  it('Deveria renderizar o Header', async () => {
+    const { getByTestId } = render(
+      <Router history={history}>
+        <PokemonsContext.Provider value={ page1LoadingOff }>
+          <Home />
+        </PokemonsContext.Provider>
+      </Router>,
+    );
+    
+    expect(getByTestId('header')).toBeInTheDocument();
+  });
+
   it('Deveria renderizar o componente Loading ao fazer requisição à API', () => {
     const { getByTestId } = render(
       <PokemonsContext.Provider value={valueLoadingOn}>
@@ -192,5 +204,17 @@ describe('Teste da Página Home', () => {
     fireEvent.click(card);
 
     expect(window.location.pathname).toBe('/pokemon/1');
+  });
+
+  it('Deveria renderizar o Footer', async () => {
+    const { getByTestId } = render(
+      <Router history={history}>
+        <PokemonsContext.Provider value={ page1LoadingOff }>
+          <Home />
+        </PokemonsContext.Provider>
+      </Router>,
+    );
+    
+    expect(getByTestId('footer')).toBeInTheDocument();
   });
 });

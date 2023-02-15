@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="header">
+    <header className="header" data-testid="header">
       <div className='logo'>
         <Link to='/' onClick={handleLogoClick}>
           <div className="logo">
