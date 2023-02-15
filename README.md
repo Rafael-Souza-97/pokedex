@@ -142,4 +142,4 @@ Crie um `Pull Request` para o repositório original.
 
 ## Site / Deploy
 
-- https://challenge-pokedex-rob40blwq-rafael-souza-97.vercel.app/
+- https://rafael-pokedex-challenge.vercel.app/
