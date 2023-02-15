@@ -88,4 +88,3 @@ export const mockContextData: IPokemonContextData = {
   setPage: jest.fn(),
   setSearch: jest.fn(),
 };
-

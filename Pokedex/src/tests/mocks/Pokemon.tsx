@@ -84,3 +84,24 @@ export const mockPokemon: IPokemon = {
     }
   ]
 };
+
+export const mockPokemonData = {
+  id: 1,
+  name: 'bulbasaur',
+  types: [
+    { type: { name: 'grass' } },
+    { type: { name: 'poison' } },
+  ],
+  sprites: { front_default: 'bulbasaur.png' },
+  height: 7,
+  weight: 69,
+  abilities: [{ ability: { name: 'chlorophyll' } }],
+  stats: [
+    { stat: { name: 'hp' }, base_stat: 45 },
+    { stat: { name: 'attack' }, base_stat: 49 },
+    { stat: { name: 'defense' }, base_stat: 49 },
+    { stat: { name: 'special-attack' }, base_stat: 65 },
+    { stat: { name: 'special-defense' }, base_stat: 65 },
+    { stat: { name: 'speed' }, base_stat: 45 },
+  ],
+};

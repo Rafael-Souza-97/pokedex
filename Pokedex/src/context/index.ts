@@ -19,5 +19,4 @@ export interface IPokemonContextData {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
-
 export const PokemonsContext = createContext<IPokemonContextData>({} as IPokemonContextData);

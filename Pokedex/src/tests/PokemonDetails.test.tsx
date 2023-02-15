@@ -2,30 +2,10 @@ import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route } from 'react-router-dom';
 import PokemonDetail from '../pages/PokemonDetail';
-
-const mockPokemon = {
-  id: 1,
-  name: 'bulbasaur',
-  types: [
-    { type: { name: 'grass' } },
-    { type: { name: 'poison' } },
-  ],
-  sprites: { front_default: 'bulbasaur.png' },
-  height: 7,
-  weight: 69,
-  abilities: [{ ability: { name: 'chlorophyll' } }],
-  stats: [
-    { stat: { name: 'hp' }, base_stat: 45 },
-    { stat: { name: 'attack' }, base_stat: 49 },
-    { stat: { name: 'defense' }, base_stat: 49 },
-    { stat: { name: 'special-attack' }, base_stat: 65 },
-    { stat: { name: 'special-defense' }, base_stat: 65 },
-    { stat: { name: 'speed' }, base_stat: 45 },
-  ],
-};
+import { mockPokemonData } from './mocks/Pokemon';
 
 jest.mock('../services/FetchPokemons', () => ({
-  getPokemonData: jest.fn(() => Promise.resolve(mockPokemon)),
+  getPokemonData: jest.fn(() => Promise.resolve(mockPokemonData)),
 }));
 
 describe('Teste da Página dos Detalhes do Pokemon', () => {
