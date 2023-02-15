@@ -1,9 +1,13 @@
 import React, { ReactNode, useEffect, useState } from 'react';
-import { PokemonsContext, IPokemon, IPokemonData, IPokemonDetail, ISearchPokemonData } from '.';
 import { getPokemonData, getPokemonList, getPokemonNameAndURL } from '../services/FetchPokemons';
+import { PokemonsContext } from '.';
+import IPokemon from '../interfaces/IPokemon';
+import IPokemonData from '../interfaces/IPokemonData';
+import IPokemonDetail from '../interfaces/IPokemonDetail';
+import ISearchPokemonData from '../interfaces/ISearchPokemonData';
 
 interface IProps {
-children: ReactNode;
+  children: ReactNode;
 }
 
 export const PokemonsContextProvider = ({ children }: IProps) => {

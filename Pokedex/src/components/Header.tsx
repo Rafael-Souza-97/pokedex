@@ -1,13 +1,13 @@
 import React from 'react';
-import pokemonLogo from '../assets/pokemon-logo.png';
 import { Link } from 'react-router-dom';
+import pokemonLogo from '../assets/pokemon-logo.png';
 import '../styles/Header.css';
 
 const Header: React.FC = () => {
   const handleLogoClick = () => {
     window.location.href = '/';
   };
-  
+
   return (
     <header className="header">
       <div className='logo'>

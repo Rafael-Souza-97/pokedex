@@ -14,8 +14,10 @@ body {
   align-items: center;
   padding: 20px;
   margin-bottom: 75px;
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
+  .search-pagination {
     flex-direction: column;
     align-items: flex-start;
   }

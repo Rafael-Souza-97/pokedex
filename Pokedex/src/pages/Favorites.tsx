@@ -7,7 +7,7 @@ function Favorites() {
   return (
     <div className='favorites'>
       <Header />
-      <FavoritesCards  />
+      <FavoritesCards />
     </div>
   );
 }
