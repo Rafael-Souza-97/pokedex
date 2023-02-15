@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
 import Cards from '../components/Cards';
+import TopButton from '../components/TopButton';
 import Footer from '../components/Footer';
 import '../styles/Home.css';
 
@@ -15,6 +16,7 @@ function Home() {
         <Pagination />
       </div>
       <Cards />
+      <TopButton />
       <Footer />
     </div>
   );
