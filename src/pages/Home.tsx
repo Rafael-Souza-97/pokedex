@@ -10,7 +10,7 @@ import '../styles/Home.css';
 
 function Home() {
   const [showFooter, setShowFooter] = useState(true);
-  const [isLoading, setIsLoading] = useState(true); // estado do loading
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleSearch = (searchTerm: string) => {
     if (searchTerm) {
