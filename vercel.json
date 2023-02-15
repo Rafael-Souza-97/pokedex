@@ -1,5 +1,5 @@
 {
-  "builds": [
-    { "src": "Pokedex/**", "use": "@vercel/static" }
+  "rewrites":  [
+    {"source": "/(.*)", "destination": "/"}
   ]
 }
