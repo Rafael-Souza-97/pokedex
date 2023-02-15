@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import FavoritesCards from '../components/FavoritesCards';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
