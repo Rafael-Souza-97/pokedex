@@ -1,0 +1,136 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-top: 50px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.text-images {
+  display: flex;
+  width: 80%;
+}
+
+.about-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.about-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.left-image-about {
+  width: 100%;
+  justify-self: end;
+}
+
+.about-text {
+  grid-column: 5 / span 4;
+  text-align: center;
+}
+
+.contact-info {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  padding: 0 4px;
+}
+
+.about-link:hover {
+  color: DarkTurquoise;
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+.image-about {
+  display: flex;
+  width: 100%;
+  align-items: center
+}
+
+.cap-pokemon {
+  max-width: 100%;
+}
+
+.repository {
+  padding: 20px;
+  margin: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contact-info {
+  display: flex;
+  width: 70%;
+}
+
+.contact-badges {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  padding: 0px 20px;
+}
+
+.email,
+.phone,
+.linkedin,
+.github,
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.email h3,
+.phone h3,
+.linkedin h3,
+.github h3,
+.portfolio h3 {
+  margin-left: 5px;
+}
+
+img {
+  max-width: 90%;
+  margin-left: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-text, .image-about {
+    width: 100%;
+    margin: 0;
+  }
+}
