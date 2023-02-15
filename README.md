@@ -108,7 +108,6 @@ git push origin sua-feature-ou-correcao
 - Crie um `Pull Request` para o repositório original.
 
 <hr>
-<br>
 
 </details>
 
