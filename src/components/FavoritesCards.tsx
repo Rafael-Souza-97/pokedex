@@ -12,6 +12,10 @@ function FavoritesCards() {
   const { isLoading } = useContext(PokemonsContext);
   const [favoriteIds, setFavoriteIds] = useState<IPokemonDetail[]>([]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   const fetchURLFavoritePokemons = async () => {
     const favorites = JSON.parse(localStorage.getItem('FavoritesPokemons') || '[]');
 

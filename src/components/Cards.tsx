@@ -13,6 +13,10 @@ const Cards =  () => {
   if(!filteredPokemon || !filteredPokemon.results) {
     return null;
   }
+
+  if (isLoading) {
+    return <Loading />;
+  }
   
   if (search.length !== 0 && searchResults.results.length === 0) {
     return (
