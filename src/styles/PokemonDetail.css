@@ -4,7 +4,10 @@
   align-items: center;
   justify-items: center;
   margin: auto;
-  position: relative; /* adicionado */
+  position: relative;
+  width: 90%;
+  margin-bottom: 40px;
+  max-width: 1200px;
 }
 
 .pokemon-detail-container-image {

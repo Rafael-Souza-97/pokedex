@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import FavoritesCards from '../components/FavoritesCards';
-import '../styles/Favorites.css';
 
 function Favorites() {
   return (
