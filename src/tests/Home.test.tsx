@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { PokemonsContext } from '../context/index';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
@@ -200,10 +200,12 @@ describe('Teste da Página Home', () => {
       </Router>
     );
 
-    const card = getByTestId('card-0');
-    fireEvent.click(card);
-
-    expect(window.location.pathname).toBe('/pokemon/1');
+    waitFor(() => {
+      const card = getByTestId('card-0');
+      fireEvent.click(card);
+    
+      expect(window.location.pathname).toBe('/pokemon/1');
+    });
   });
 
   it('Deveria renderizar o Footer', async () => {
@@ -215,6 +217,8 @@ describe('Teste da Página Home', () => {
       </Router>,
     );
     
-    expect(getByTestId('footer')).toBeInTheDocument();
+    waitFor(() => {
+      expect(getByTestId('footer')).toBeInTheDocument();
+    });
   });
 });
