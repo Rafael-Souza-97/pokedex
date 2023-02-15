@@ -112,6 +112,7 @@ git push origin sua-feature-ou-correcao
 
 </details>
 
+<br>
 
 ## Autor
 
