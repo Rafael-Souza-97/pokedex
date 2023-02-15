@@ -9,16 +9,7 @@ import Loading from '../components/Loading'; // componente de loading
 import '../styles/Home.css';
 
 function Home() {
-  const [showFooter, setShowFooter] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-
-  const handleSearch = (searchTerm: string) => {
-    if (searchTerm) {
-      setShowFooter(false);
-    } else {
-      setShowFooter(true);
-    }
-  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,7 +21,7 @@ function Home() {
     <div className='home'>
       <Header />
       <div className='search-pagination'>
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar />
         <Pagination />
       </div>
       {isLoading ? (
@@ -39,7 +30,7 @@ function Home() {
         <>
           <Cards />
           <TopButton />
-          {showFooter && <Footer />}
+          <Footer />
         </>
       )}
     </div>
