@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getPokemonData } from '../services/FetchPokemons';
 import { PokemonsContext } from '../context';
+import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
 import TypeBadge from './TypeBadge';
 import sadPokemon from '../assets/sad-pokemon.png';
 import '../styles/Card.css';
-import IPokemonDetail from '../interfaces/IPokemonDetail';
 
 function FavoritesCards() {
   const { isLoading } = useContext(PokemonsContext);

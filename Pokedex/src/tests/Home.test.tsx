@@ -1,8 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { IPokemonContextData, PokemonsContext } from '../context/index';
-import { mockPokemon } from './mocks/Pokemon';
+import { PokemonsContext } from '../context/index';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { act } from 'react-dom/test-utils';
@@ -10,91 +9,15 @@ import Home from '../pages/Home';
 import SearchBar from '../components/SearchBar';
 import Pagination from '../components/Pagination';
 import Cards from '../components/Cards';
+import {
+  page1LoadingOff,
+  emptyFilteredPokemonLoadingOff,
+  page2LoadingOff,
+  valueLoadingOn,
+  mockContextData
+} from './mocks/APIMocks';
 
 const history = createBrowserHistory();
-
-const filteredPokemon = mockPokemon;
-
-const valueLoadingOn = {
-  searchResults: mockPokemon,
-  isLoading: true,
-  filteredPokemon,
-  totalPages: 0,
-  page: { 
-    page: 1,
-    limit: 50,
-    offset: 0
-  },
-  search: '',
-  setPage: jest.fn(),
-  setSearch: jest.fn(),
-};
-
-const page1LoadingOff  = {
-  isLoading: false,
-  filteredPokemon,
-  totalPages: 20,
-  searchResults: mockPokemon,
-  page: { 
-    page: 1,
-    limit: 50,
-    offset: 0
-  },
-  search: '',
-  setPage: jest.fn(),
-  setSearch: jest.fn(),
-};
-
-const page2LoadingOff = {
-  isLoading: false,
-  filteredPokemon,
-  searchResults: mockPokemon,
-  totalPages: 20,
-  page: { 
-    page: 2,
-    limit: 50,
-    offset: 50
-  },
-  search: '',
-  setPage: jest.fn(),
-  setSearch: jest.fn(),
-};
-
-const emptyFilteredPokemonLoadingOff = {
-  isLoading: false,
-  filteredPokemon: {
-    results: [],
-    next: null,
-    previous: null,
-    count: 0
-  },
-  searchResults: {
-    results: [],
-    next: null,
-    previous: null,
-    count: 0
-  },
-  search: '',
-  totalPages: 20,
-  page: {
-    page: 1,
-    limit: 0,
-    offset: 0
-  },
-  setPage: jest.fn(),
-  setSearch: jest.fn()
-};
-
-const mockContextData: IPokemonContextData = {
-  isLoading: false,
-  filteredPokemon: mockPokemon,
-  searchResults: mockPokemon,
-  search: '',
-  totalPages: 1,
-  page: { page: 1, limit: 10, offset: 0 },
-  setPage: jest.fn(),
-  setSearch: jest.fn(),
-};
 
 describe('Teste da Página Home', () => {
   afterEach(cleanup);
@@ -149,7 +72,7 @@ describe('Teste da Página Home', () => {
 
   it('Deveria retornar o card do pokemon de acordo com o valor do input', async () => {
     const { getByPlaceholderText } = render(
-      <PokemonsContext.Provider value={page1LoadingOff }>
+      <PokemonsContext.Provider value={ page1LoadingOff }>
         <SearchBar />
       </PokemonsContext.Provider>
     );
@@ -163,7 +86,7 @@ describe('Teste da Página Home', () => {
       await new Promise((resolve) => setTimeout(resolve, 0));
       render(
         <Router history={history}>
-          <PokemonsContext.Provider value={page1LoadingOff }>
+          <PokemonsContext.Provider value={ page1LoadingOff }>
             <Cards />
           </PokemonsContext.Provider>,
         </Router>,

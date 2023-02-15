@@ -1,4 +1,4 @@
-import { IPokemon } from '../../context';
+import IPokemon from '../../interfaces/IPokemon';
 
 export const mockPokemon: IPokemon = {
   count: 1,
@@ -82,4 +82,5 @@ export const mockPokemon: IPokemon = {
       ],
       weight: 69,
     }
-  ]};
+  ]
+};
