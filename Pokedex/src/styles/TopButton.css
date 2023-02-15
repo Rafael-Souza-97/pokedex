@@ -1,10 +1,10 @@
 .to-top-button {
-  border-radius: 50%;
   border-color: transparent;
   position: fixed;
   top: 86%;
   right: 3%;
-  background-color: rgb(171, 171, 171);
+  background-color: rgb(219, 219, 219);
+  border-radius: 50%;
 }
 
 .to-top-button:hover {

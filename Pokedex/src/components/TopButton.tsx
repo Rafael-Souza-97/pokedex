@@ -14,8 +14,6 @@ const TopButton: React.FC = () => {
   function handleScroll() {
     const scrollPos = window.scrollY;
 
-    console.log(scrollPos);
-
     if (scrollPos > 500) {
       setIsVisible(true);
     } else {
@@ -36,7 +34,7 @@ const TopButton: React.FC = () => {
         onClick={handleClick}
         className="to-top-button"
       >
-        <RxDoubleArrowUp size={25} color={'white'} />
+        <RxDoubleArrowUp size={25} color={'black'} />
       </button>
     )
   ) || null;
