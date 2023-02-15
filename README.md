@@ -83,29 +83,29 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para visual
 
 ### Contribuição
 
-Contribuições são sempre bem-vindas! Para contribuir com o projeto, siga as instruções abaixo:
+ Contribuições são sempre bem-vindas! Para contribuir com o projeto, siga as instruções abaixo:
 
-Fork este repositório
+ - Fork este repositório
 
-Crie uma nova branch com sua feature ou correção de bug:
+> Crie uma nova branch com sua feature ou correção de bug:
 
 ```bash
 git checkout -b sua-feature-ou-correcao
 ```
 
-Faça as alterações necessárias e commit as mudanças:
+- Faça as alterações necessárias e commit as mudanças:
 
 ```bash
 git commit -m "sua mensagem de commit"
 ```
 
-Envie suas alterações para seu repositório remoto:
+- Envie suas alterações para seu repositório remoto:
 
 ```bash
 git push origin sua-feature-ou-correcao
 ```
 
-Crie um `Pull Request` para o repositório original.
+- Crie um `Pull Request` para o repositório original.
 
 <hr>
 <br>
