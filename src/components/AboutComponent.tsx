@@ -49,7 +49,7 @@ const AboutComponent = () => {
               Github.
             </a>
           Para elevar ainda mais a qualidade e segurança do projeto,
-          foi implementado testes unitários e de integração.
+          implementei testes unitários e de integração.
 
           Para atingir os objetivos, utilizei diversas tecnologias, como
             <a
