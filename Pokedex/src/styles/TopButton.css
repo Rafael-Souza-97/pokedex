@@ -1,0 +1,20 @@
+.to-top-button {
+  border-radius: 50%;
+  border-color: transparent;
+  position: fixed;
+  top: 86%;
+  right: 3%;
+  background-color: rgb(171, 171, 171);
+}
+
+.to-top-button:hover {
+  border-radius: 50%;
+  background-color: DarkTurquoise;
+}
+
+@media (max-width: 400px) {
+  .to-top-button[disabled=disabled],
+  .to-top-button {
+  display: none;
+  }
+}
