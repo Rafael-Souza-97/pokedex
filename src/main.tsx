@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <PokemonsContextProvider>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path='/pokemon/:id' component={PokemonDetail} /> 
+        <Route exact path='/pokemon/:id' component={PokemonDetail} /> 
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/about" component={About} />
         <Route path="*" component={PageNotFound} />
