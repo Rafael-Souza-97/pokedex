@@ -1,6 +1,6 @@
 # Pokédex
 
-Este é um projeto de uma Pokedex, criado como parte de um desafio técnico de uma empresa. Ele utiliza [Typescript](https://www.typescriptlang.org/), [React](https://pt-br.reactjs.org/) e [Vite](https://vitejs.dev/) para o front-end, [Jest](https://jestjs.io/pt-BR/) e [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para testes e [ESLint](https://eslint.org/) para linting. Este  Projeto continuará tendo atualizações.
+Este é um projeto de uma Pokédex, criado como parte de um desafio técnico de uma empresa. Ele utiliza [Typescript](https://www.typescriptlang.org/), [React](https://pt-br.reactjs.org/) e [Vite](https://vitejs.dev/) para o front-end, [Jest](https://jestjs.io/pt-BR/) e [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para testes e [ESLint](https://eslint.org/) para linting. Este  Projeto continuará tendo atualizações.
 
 Pokémon é uma franquia de jogos eletrônicos, desenhos animados, filmes e uma variedade de outras mídias, criada no Japão em 1996. Ela gira em torno de criaturas fictícias chamadas Pokémon, que os jogadores capturam, treinam e usam para batalhar entre si. A franquia Pokémon é extremamente popular em todo o mundo, com milhões de jogadores, fãs e colecionadores.
 

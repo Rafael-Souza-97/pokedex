@@ -133,6 +133,7 @@
 @media (max-width: 767px) {
   .grid-container {
     grid-template-columns: 1fr;
+    margin: 1% 30%;
   }
 
   .sad-pokemon-not-found {
@@ -151,5 +152,19 @@
   }
   .types {
     margin: 25px 0px;
+  }
+
+  .card-image-container {
+    top: -75px;
+  }
+}
+
+@media (max-width: 590px) {
+  .grid-container {
+    margin: 1% 15%;
+  }
+
+  .card-image-container {
+    top: -75px;
   }
 }

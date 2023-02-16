@@ -4,7 +4,8 @@
 
 body {
   background:  rgb(245, 245, 250);
-  width: 100%
+  width: 100%;
+  min-width: 350px;
 }
 
 .search-pagination {
@@ -23,7 +24,9 @@ body {
   .search-pagination {
     flex-direction: column;
     align-content: center;
+    margin: 30px 0px;
   }
+
   .searchbar {
     width: 100%;
   }

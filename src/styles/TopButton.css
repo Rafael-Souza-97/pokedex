@@ -13,7 +13,7 @@
   background-color: DarkTurquoise;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .to-top-button[disabled=disabled],
   .to-top-button {
   display: none;

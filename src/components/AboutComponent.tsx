@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineGithub, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { BsLinkedin } from 'react-icons/bs';
-import { FaSuitcase, FaBriefcase } from 'react-icons/fa';
+import { FaSuitcase } from 'react-icons/fa';
 import happyPokemon from '../assets/happy-pokemon.png';
 import capPokemon from '../assets/cap-pokemon.png';
 
@@ -17,7 +17,7 @@ const AboutComponent = () => {
         <div className='about-text'>
           <h1>Sobre a Pokédex</h1>
           <h2>Desafio Técnico</h2>
-          <p>
+          <p className='text'>
           Esta aplicação foi desenvolvida como parte de um desafio técnico de uma empresa.
           O objetivo era criar uma plataforma que consumisse dados da             
             <a
@@ -74,7 +74,7 @@ const AboutComponent = () => {
               rel="noreferrer"
               className='about-link'
             > 
-              Context API
+               Context-API
             </a>,
             <a
               href= "https://axios-http.com/ptbr/docs/intro"
@@ -82,7 +82,7 @@ const AboutComponent = () => {
               rel="noreferrer"
               className='about-link'
             > 
-              Axios
+               Axios
             </a>,
             <a
               href= "https://jestjs.io/pt-BR/"
@@ -90,7 +90,7 @@ const AboutComponent = () => {
               rel="noreferrer"
               className='about-link'
             > 
-              Jest
+               Jest
             </a> e
             <a
               href= "https://testing-library.com/docs/react-testing-library/intro/"
@@ -117,7 +117,7 @@ const AboutComponent = () => {
         </div>
 
         <div className='image-about'>
-          <img src={happyPokemon} alt="pokemon-left" className='cap-pokemon'/>
+          <img src={happyPokemon} alt="pokemon-left" className='happy-pokemon'/>
         </div>
       </div>
 

@@ -13,6 +13,10 @@
   width: 80%;
 }
 
+.about-text {
+  text-align: center;
+}
+
 .about-text h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -56,12 +60,12 @@
   color: black;
   font-weight: 300;
   padding: 0 4px;
+  max-width: 100%;
 }
 
 .about-link:hover {
   color: DarkTurquoise;
   font-weight: 600;
-  padding: 0 4px;
 }
 
 .image-about {
@@ -70,8 +74,19 @@
   align-items: center
 }
 
+.text {
+  text-align: center;
+  padding: 0 5%;
+}
+
 .cap-pokemon {
   max-width: 100%;
+  margin-right: 20%;
+}
+
+.happy-pokemon {
+  max-width: 100%;
+  margin-left:20%;
 }
 
 .repository {
@@ -117,9 +132,8 @@
   margin-left: 5px;
 }
 
-img {
-  max-width: 90%;
-  margin-left: 5%;
+.about-link + .about-link {
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -131,6 +145,7 @@ img {
   
   .about-text, .image-about {
     width: 100%;
+    word-wrap: break-word;
     margin: 0;
   }
 }
