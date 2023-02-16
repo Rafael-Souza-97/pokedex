@@ -21,8 +21,8 @@ const Header: React.FC = () => {
       <div className='header-nav'>
         <nav>
           <ul className='header-navbar'>
-            <li className='favorites-link'><Link to="/favorites">Favorites</Link></li>
-            <li className='about-link'><Link to="/about">About</Link></li>
+            <li className='favorites-link'><Link to="/favorites">Favoritos</Link></li>
+            <li className='about-link'><Link to="/about">Sobre</Link></li>
           </ul>
         </nav>
       
