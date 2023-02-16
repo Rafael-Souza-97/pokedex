@@ -27,8 +27,9 @@ O projeto possui as seguintes rotas:
 O projeto utiliza a [PokeAPI](https://pokeapi.co/) para buscar informações sobre os Pokémons. A  `PokeAPI` é uma API de código aberto que oferece diversas informações sobre os Pokémons, como suas habilidades, características, entre outras. A URL base da API é `https://pokeapi.co/api/v2/`, com várias variações disponíveis na documentação.
 
 Para utilizar a `PokeAPI`, o projeto utiliza a biblioteca [Axios](https://axios-http.com/ptbr/docs/intro) para fazer as requisições HTTP para a API. As informações são retornadas em formato JSON e são processadas pelo projeto para serem exibidas nas páginas do site.
-<hr>
+
 <br>
+
 <details>
   <summary><strong>Como instalar a Pokédex</strong></summary><br />
 
@@ -59,6 +60,7 @@ npm install
 ```
 
 <hr>
+<br>
 
 ### Scripts
 
@@ -80,6 +82,7 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para visual
 
 
 <hr>
+<br>
 
 ### Contribuição
 
