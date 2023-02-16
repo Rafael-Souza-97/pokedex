@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import FavoritesCards from '../components/FavoritesCards';
+import Loading from '../components/Loading';
 
 function Favorites() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
+
   return (
     <div className='favorites'>
       <Header />
-      <FavoritesCards />
+      { isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <FavoritesCards />
+        </>
+      )}
+
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Router } from 'react-router-dom';
 import PokemonDetail from '../pages/PokemonDetail';
-import { mockPokemonData } from './mocks/Pokemon';
+import { mockPokemonData } from './mocks/PokemonMock';
 import { PokemonsContext } from '../context';
 import { page1LoadingOff } from './mocks/APIMocks';
 import { createBrowserHistory } from 'history';
@@ -13,21 +13,22 @@ jest.mock('../services/FetchPokemons', () => ({
   getPokemonData: jest.fn(() => Promise.resolve(mockPokemonData)),
 }));
 
-describe('Teste da Página dos Detalhes do Pokemon', () => {
+describe('Teste da Página dos Detalhes do Pokémon', () => {
   it('Deveria renderizar o Header', async () => {
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router history={ history }>
         <PokemonsContext.Provider value={ page1LoadingOff }>
           <PokemonDetail />
         </PokemonsContext.Provider>
       </Router>,
     );
+
     waitFor(() => {
       expect(getByTestId('header')).toBeInTheDocument();
     });
   });
 
-  it('Deveria renderizar o Pokemon e seus atributos', async () => {
+  it('Deveria renderizar o Pokémon e seus atributos', async () => {
     const { getByText, getByAltText } = render(
       <MemoryRouter initialEntries={['/1']}>
         <Route path='pokemon/:id'>
@@ -35,6 +36,7 @@ describe('Teste da Página dos Detalhes do Pokemon', () => {
         </Route>
       </MemoryRouter>
     );
+
     waitFor(() => {
       expect(getByText(/Nº:/i)).toBeInTheDocument();
       expect(getByText(/Bulbasaur/i)).toBeInTheDocument();

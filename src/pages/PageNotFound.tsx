@@ -12,20 +12,29 @@ const NotFound: React.FC = () => {
         src={ error404 }
         alt="Pikachu crying because the page requested was not found"
       />
+
       <h1 className="not-found-request-text">
         Page requested not found
         <span role="img" aria-label="Crying emoji"> 😭</span>
       </h1>
+  
       <p className="page-not-found-text">
         Desculpe, a página que você está tentando acessar não foi encontrada.
       </p>
+
       <img
         className="not-found-image"
         src={ sadPokemon }
         alt="Pikachu crying because the page requested was not found"
       />
+
       <Link to="/">
-        <button type="button" className="redirect-button">Voltar para a página inicial</button>
+        <button
+          type="button"
+          className="redirect-button"
+        >
+          Voltar para a página inicial
+        </button>
       </Link>
     </div>
   );

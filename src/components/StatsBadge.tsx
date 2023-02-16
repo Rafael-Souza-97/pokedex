@@ -6,8 +6,8 @@ interface IStatsBadgeProps {
 
 const StatsBadge: React.FC<IStatsBadgeProps> = ({ text }) => {
   let backgroundColor = '';
-  let newText;
   let color = '';
+  let newText;
 
   switch (text) {
   case 'hp':
@@ -52,7 +52,7 @@ const StatsBadge: React.FC<IStatsBadgeProps> = ({ text }) => {
       textTransform: 'capitalize',
       marginBottom: '10px'
     }}>
-      {newText}
+      { newText }
     </div>
   );
 };

@@ -14,7 +14,6 @@ const PokemonDetail = () => {
   const [details, setDetails] = useState<IPokemonDetail | undefined>(undefined);
   const [isFavorite, setIsFavorite] = useState(false);
   const { id } = useParams<{ id: string }>();
-
   const DETAILS_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const FAVORITES_KEY = 'FavoritesPokemons';
 
@@ -62,7 +61,6 @@ const PokemonDetail = () => {
       localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
     }
   }, [isFavorite]);
-
 
   if (loading) return <Loading />;
 

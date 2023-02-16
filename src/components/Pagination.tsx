@@ -17,7 +17,7 @@ function Pagination() {
 
     setPage({ ...page, page: newPage, limit: newLimit, offset: newOffset });
   };
-  
+
   const onRightClickHandle = () => {
     let newPage = page.page + 1;
     const newOffset = offset + 50;
@@ -27,8 +27,7 @@ function Pagination() {
     
     setPage({ ...page, page: newPage, limit: 50, offset: newOffset });
   };
-  
-  
+
   return (
     <div className='pagination-container' data-testid='pagination'>
       <button 

@@ -8,32 +8,6 @@
   text-align: center;
 }
 
-.pokemon-search-no-results {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: 5%;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  text-align: center;
-  font-size: xx-large;
-}
-
-.sad-pokemon-not-found {
-  max-width: 30%;
-  border-radius: 25%;
-  margin-top: 100px;
-  margin-bottom: 50px;
-  animation: pulse 1s ease-in-out infinite;
-  animation-iteration-count: 3;
-}
-
-.link-card {
-  text-decoration: none;
-}
-
 .card {
   display: grid;
   justify-items: center;
@@ -50,7 +24,7 @@
   opacity: 85%;
   border-radius: 15px;
   background-color: Snow;
-  }
+}
 
 .card p{
   font-family: 'Montserrat', sans-serif;
@@ -96,6 +70,32 @@
 .card-image-container img {
   z-index: 99;
   width: 40%;
+}
+
+.pokemon-search-no-results {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.sad-pokemon-not-found {
+  max-width: 20%;
+  border-radius: 25%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  animation: pulse 1s ease-in-out infinite;
+  animation-iteration-count: 3;
+}
+
+.link-card {
+  text-decoration: none;
 }
 
 .types-container {

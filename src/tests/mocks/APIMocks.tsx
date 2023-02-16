@@ -1,5 +1,5 @@
 import { IPokemonContextData } from '../../context';
-import { mockPokemon } from './Pokemon';
+import { mockPokemon } from './PokemonMock';
 
 const filteredPokemon = mockPokemon;
 

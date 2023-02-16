@@ -8,10 +8,11 @@ import { page1LoadingOff } from './mocks/APIMocks';
 
 const history = createMemoryHistory();
 
-describe('FavoritesCards', () => {
+describe('Teste da página Favoritos', () => {
   beforeEach(() => {
     localStorage.clear();
   });
+
   it('Deveria renderizar o Header', async () => {
     const { getByTestId } = render(
       <Router history={history}>
@@ -20,15 +21,17 @@ describe('FavoritesCards', () => {
         </PokemonsContext.Provider>
       </Router>,
     );
+  
     waitFor(()=> {
       expect(getByTestId('header')).toBeInTheDocument();
     });
   });
 
-  test('Deveria renderizar o card do pokemon favorito', async () => {
+  it('Deveria renderizar o card do pokémon favorito', async () => {
     localStorage.setItem('FavoritesPokemons', JSON.stringify(['1']));
+  
     render(
-      <Router history={history}>
+      <Router history={ history }>
         <FavoritesCards />
       </Router>
     );
@@ -39,10 +42,11 @@ describe('FavoritesCards', () => {
     });
   });
 
-  test('Deveria retornar uma mensagem caso não tenha pokemon favoritado', async () => {
+  it('Deveria retornar uma mensagem caso não tenha pokémon favoritado', async () => {
     const history = createMemoryHistory();
+  
     render(
-      <Router history={history}>
+      <Router history={ history }>
         <FavoritesCards />
       </Router>
     );

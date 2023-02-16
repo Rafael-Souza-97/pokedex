@@ -13,16 +13,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .logo img {
-  height: 75px; 
+  height: 75px;
+  opacity: 80%;
+}
+
+.logo img:hover {
+  opacity: 100%;
 }
 
 .header-nav {
   display: flex;
   justify-content: flex-end;
-  }
+}
 
 .header-navbar {
   display: flex;

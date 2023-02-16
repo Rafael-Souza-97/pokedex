@@ -1,5 +1,9 @@
 import React, { ReactNode, useEffect, useState } from 'react';
-import { getPokemonData, getPokemonList, getPokemonNameAndURL } from '../services/FetchPokemons';
+import {
+  getPokemonData,
+  getPokemonList,
+  getPokemonNameAndURL
+} from '../services/FetchPokemons';
 import { PokemonsContext } from '.';
 import IPokemon from '../interfaces/IPokemon';
 import IPokemonData from '../interfaces/IPokemonData';

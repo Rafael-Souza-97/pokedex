@@ -12,11 +12,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter>
     <PokemonsContextProvider>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path='/pokemon/:id' component={PokemonDetail} /> 
-        <Route exact path="/favorites" component={Favorites} />
-        <Route exact path="/about" component={About} />
-        <Route path="*" component={PageNotFound} />
+        <Route exact path="/" component={ Home } />
+        <Route exact path='/pokemon/:id' component={ PokemonDetail } /> 
+        <Route exact path="/favorites" component={ Favorites } />
+        <Route exact path="/about" component={ About } />
+        <Route path="*" component={ PageNotFound } />
       </Switch>
     </PokemonsContextProvider>
   </BrowserRouter>

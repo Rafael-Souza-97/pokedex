@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Loading from '../components/Loading';
 import Header from '../components/Header';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
 import Cards from '../components/Cards';
 import TopButton from '../components/TopButton';
 import Footer from '../components/Footer';
-import Loading from '../components/Loading'; // componente de loading
 import '../styles/Home.css';
 
 function Home() {
@@ -14,17 +14,19 @@ function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   return (
     <div className='home'>
       <Header />
+
       <div className='search-pagination'>
         <SearchBar />
         <Pagination />
       </div>
-      {isLoading ? (
+  
+      { isLoading ? (
         <Loading />
       ) : (
         <>

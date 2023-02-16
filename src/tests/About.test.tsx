@@ -12,35 +12,30 @@ describe('Teste da página About', () => {
   beforeEach(() => {
     localStorage.clear();
   });
+
   it('Deveria renderizar o Header', async () => {
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router history={ history }>
         <PokemonsContext.Provider value={ page1LoadingOff }>
           <About />
         </PokemonsContext.Provider>
       </Router>,
     );
+  
     waitFor(()=> {
       expect(getByTestId('header')).toBeInTheDocument();
     });
   });
 
-  it('renders the heading correctly', () => {
-    const { getByTestId } = render(
-      <Router history={history}>
+  it('Deveria renderizar o título da página corretamente', () => {
+    const { getByText } = render(
+      <Router history={ history }>
         <PokemonsContext.Provider value={ page1LoadingOff }>
           <About />
         </PokemonsContext.Provider>
       </Router>,
     );
 
-    const { getByText } = render(
-      <Router history={history}>
-        <PokemonsContext.Provider value={ page1LoadingOff }>
-          <About />
-        </PokemonsContext.Provider>
-      </Router>,
-    );
     waitFor(() => {
       const heading = getByText('Sobre a Pokédex');
       expect(heading).toBeInTheDocument();
@@ -55,6 +50,7 @@ describe('Teste da página About', () => {
         </PokemonsContext.Provider>
       </Router>,
     );
+  
     waitFor(() => {
       const images = getAllByAltText(/pokemon-left/);
       expect(images).toHaveLength(2);

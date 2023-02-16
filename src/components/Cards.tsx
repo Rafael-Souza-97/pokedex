@@ -10,13 +10,9 @@ import '../styles/Card.css';
 const Cards =  () => {
   const { isLoading, filteredPokemon, searchResults, search } = useContext(PokemonsContext);
 
-  if(!filteredPokemon || !filteredPokemon.results) {
-    return null;
-  }
+  if(!filteredPokemon || !filteredPokemon.results) return null;
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  if (isLoading) return <Loading />;
   
   if (search.length !== 0 && searchResults.results.length === 0) {
     return (

@@ -12,9 +12,7 @@ function FavoritesCards() {
   const { isLoading } = useContext(PokemonsContext);
   const [favoriteIds, setFavoriteIds] = useState<IPokemonDetail[]>([]);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  if (isLoading) return <Loading />;
 
   const fetchURLFavoritePokemons = async () => {
     const favorites = JSON.parse(localStorage.getItem('FavoritesPokemons') || '[]');
@@ -26,14 +24,49 @@ function FavoritesCards() {
     const results = await Promise.all(favoritesData);
 
     setFavoriteIds(results);
-    
   };
 
   useEffect(() => {
     fetchURLFavoritePokemons();
   }, []);
 
-  if (favoriteIds.length === 0) {
+  if (favoriteIds.length !== 0) {
+    return (
+      <div className="grid-container">
+        { isLoading ? (
+          <Loading />
+        ) : (
+          favoriteIds.map((poke: IPokemonDetail, index) => (
+            <Link
+              to={`/pokemon/${poke.id}`}
+              key={index}
+              style={{ textDecoration: 'none' }}
+            >
+              <div key={index} className="card" data-testid={`card-${index}`}>
+                <div className='card-image-container'>
+                  <img
+                    src={poke.sprites.front_default}
+                    alt={poke.name}
+                    className='card-pokemon-image'
+                  />
+                </div>
+  
+                <p>Nº: {poke.id}</p>
+  
+                <h2>{poke.name[0].toUpperCase() + poke.name.substring(1)}</h2>
+  
+                <div className="types-container">
+                  {poke.types.map((type) => (
+                    <TypeBadge key={type.type.name} type={type.type.name} />
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))
+        )}
+      </div>
+    );
+  } else {
     return (
       <div className='pokemon-search-no-results' data-testid='no-results'>
         <p>Você ainda não possui um pokemon favorito</p>
@@ -41,42 +74,6 @@ function FavoritesCards() {
       </div>
     );
   }
-
-  return (
-    <div className="grid-container">
-      { isLoading ? (
-        <Loading />
-      ) : (
-        favoriteIds.map((poke: IPokemonDetail, index) => (
-          <Link
-            to={`/pokemon/${poke.id}`}
-            key={index}
-            style={{ textDecoration: 'none' }}
-          >
-            <div key={index} className="card" data-testid={`card-${index}`}>
-              <div className='card-image-container'>
-                <img
-                  src={poke.sprites.front_default}
-                  alt={poke.name}
-                  className='card-pokemon-image'
-                />
-              </div>
-
-              <p>Nº: {poke.id}</p>
-
-              <h2>{poke.name[0].toUpperCase() + poke.name.substring(1)}</h2>
-
-              <div className="types-container">
-                {poke.types.map((type) => (
-                  <TypeBadge key={type.type.name} type={type.type.name} />
-                ))}
-              </div>
-            </div>
-          </Link>
-        ))
-      )}
-    </div>
-  );
 } 
 
 export default FavoritesCards;
