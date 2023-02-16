@@ -5,7 +5,7 @@ Este é um projeto de uma Pokédex, criado como parte de um desafio técnico de 
 Pokémon é uma franquia de jogos eletrônicos, desenhos animados, filmes e uma variedade de outras mídias, criada no Japão em 1996. Ela gira em torno de criaturas fictícias chamadas Pokémon, que os jogadores capturam, treinam e usam para batalhar entre si. A franquia Pokémon é extremamente popular em todo o mundo, com milhões de jogadores, fãs e colecionadores.
 
 A Pokédex é uma enciclopédia virtual de Pokémon. Ela contém informações detalhadas sobre cada criatura, incluindo suas habilidades, movimentos, estatísticas e evoluções. Na franquia Pokémon, a Pokédex é frequentemente usada pelos jogadores para ajudá-los a completar a coleção de Pokémon, bem como para aprender mais sobre essas criaturas incríveis.
-<br>
+
 <br>
 
 ## Rotas
@@ -21,6 +21,7 @@ O projeto possui as seguintes rotas:
 - `/about`: exibe informações sobre o projeto e detalhes de contato.
 
 - `*`: exibe uma página de erro caso o usuário acesse uma URL inválida.
+
 <br>
 
 ## API
@@ -53,7 +54,7 @@ cd pokedex
 
 <br>
 
- - Instale as depëndencias, caso necessário, com `npm install`:
+- Instale as depëndencias, caso necessário, com `npm install`:
 
 ```bash
 npm install
@@ -64,15 +65,15 @@ npm install
 
 ### Scripts
 
- - Execute os testes com `npm teste`:
-  > Executará os testes unitários e testes de integração.
+- Execute os testes com `npm teste`:
+> Executará os testes unitários e testes de integração.
  
 ```bash
 npm test
 ```
 
- - Execute a aplicação com  com `npm start`:
-  > Executará a aplicação em modo de desenvolvimento.
+- Execute a aplicação com  com `npm start`:
+> Executará a aplicação em modo de desenvolvimento.
  
 ```bash
 npm start
@@ -80,15 +81,14 @@ npm start
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para visualiza-lo.
 
-
 <hr>
 <br>
 
 ### Contribuição
 
- Contribuições são sempre bem-vindas! Para contribuir com o projeto, siga as instruções abaixo:
+Contribuições são sempre bem-vindas! Para contribuir com o projeto, siga as instruções abaixo:
 
- - Fork este repositório
+- Fork este repositório
 
 > Crie uma nova branch com sua feature ou correção de bug:
 
