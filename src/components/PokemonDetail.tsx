@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPokemonData } from '../services/FetchPokemons';
+import { getFromLocalStorage, saveToLocalStorage } from '../services/LocalStorage';
 import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
 import TypeBadge from './TypeBadge';
@@ -22,14 +23,15 @@ const PokemonDetail = () => {
   };
 
   function setFavoritesPokemons() {
-    const favorites = localStorage.getItem('FavoritesPokemons');
+    const favorites = getFromLocalStorage('FavoritesPokemons');
+  
     if (!favorites || favorites === '') {
-      localStorage.setItem('FavoritesPokemons', JSON.stringify([]));
+      saveToLocalStorage('FavoritesPokemons', []);
     }
   }
 
   const checkIsFavorite = (id: string): void => {
-    const favorites: string[] = JSON.parse(localStorage.getItem('FavoritesPokemons') || '[]');
+    const favorites: string[] = getFromLocalStorage('FavoritesPokemons') || '[]';
     setIsFavorite(favorites.includes(id));
   };
 
@@ -54,11 +56,11 @@ const PokemonDetail = () => {
   
     if (isFavorite) {
       if (!favorites.includes(id)) {
-        localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites, id]));
+        saveToLocalStorage(FAVORITES_KEY, [...favorites, id]);
       }
     } else {
       const updatedFavorites = favorites.filter((favoriteId: string) => favoriteId !== id);
-      localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
+      saveToLocalStorage(FAVORITES_KEY, updatedFavorites);
     }
   }, [isFavorite]);
 
@@ -71,8 +73,8 @@ const PokemonDetail = () => {
           <div className='favorite-container'>
             <button onClick={toggleFavorite} className="hearts">
               {isFavorite
-                ? <img src={favoriteHeart} alt="Favorite" />
-                : <img src={unfavoriteHeart} alt="Unfavorite" />
+                ? <img src={favoriteHeart} alt="favorite" className='favorite-heart' />
+                : <img src={unfavoriteHeart} alt="unfavorite" className='unfavorite-heart' />
               }
             </button>
           </div>

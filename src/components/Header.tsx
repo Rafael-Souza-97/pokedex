@@ -1,21 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import pokemonLogo from '../assets/pokemon-logo.png';
-import { PokemonsContext } from '../context';
-import '../styles/Header.css';
 import DarkMode from './DarkMode';
+import pokemonLogo from '../assets/pokemon-logo.png';
+import '../styles/Header.css';
 
 const Header: React.FC = () => {
-  const { 
-    isDarkModeOn
-  } = useContext(PokemonsContext);
-
-
   const handleLogoClick = () => {
-    console.log('clicou');
-    console.log('isDarkModeON?', isDarkModeOn);
     window.location.href = '/';
-    console.log('isDarkModeON?', isDarkModeOn);
   };
 
   return (

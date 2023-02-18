@@ -1,33 +1,38 @@
 import React, { ReactNode, useEffect, useState } from 'react';
+import { PokemonsContext } from '.';
+import ISearchPokemonData from '../interfaces/ISearchPokemonData';
+import IPokemon from '../interfaces/IPokemon';
+import IPokemonData from '../interfaces/IPokemonData';
+import IPokemonDetail from '../interfaces/IPokemonDetail';
+import { getFromLocalStorage, saveToLocalStorage } from '../services/LocalStorage';
 import {
   getPokemonData,
   getPokemonList,
   getPokemonNameAndURL
 } from '../services/FetchPokemons';
-import { PokemonsContext } from '.';
-import IPokemon from '../interfaces/IPokemon';
-import IPokemonData from '../interfaces/IPokemonData';
-import IPokemonDetail from '../interfaces/IPokemonDetail';
-import ISearchPokemonData from '../interfaces/ISearchPokemonData';
 
 interface IProps {
   children: ReactNode;
 }
 
+const searchResultsInitial = {
+  count: 0,
+  next: null,
+  previous: null,
+  results: [],
+};
+
+const isDarkModeOnInitial = getFromLocalStorage('isDarkModeOn')|| false;
+
 export const PokemonsContextProvider = ({ children }: IProps) => {
   const [filteredPokemon, setFilteredPokemon] = useState<IPokemon>({} as IPokemon);
-  const [searchResults, setSearchResults] = useState<IPokemon>({
-    count: 0,
-    next: null,
-    previous: null,
-    results: [],
-  } as IPokemon);
+  const [searchResults, setSearchResults] = useState<IPokemon>(searchResultsInitial as IPokemon);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState({ page: 1, limit: 50, offset: 0});
   const [totalPages, setTotalPages] = useState(0);
   const [search, setSearch] = useState('');
   const [responseSearch, setResponseSearch] = useState({} as ISearchPokemonData);
-  const [isDarkModeOn, setIsDarkModeOn] = useState(false);
+  const [isDarkModeOn, setIsDarkModeOn] = useState(() => isDarkModeOnInitial) ;
 
   useEffect(() => {
     const fetchSearchPokemons = async () => {
@@ -97,6 +102,10 @@ export const PokemonsContextProvider = ({ children }: IProps) => {
       fetchSearchData();
     }
   }, [search]);
+
+  useEffect(() => {
+    saveToLocalStorage('isDarkModeOn', isDarkModeOn);
+  }, [isDarkModeOn]);
 
   return (
     <PokemonsContext.Provider value={{

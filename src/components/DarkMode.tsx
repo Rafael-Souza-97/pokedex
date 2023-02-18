@@ -14,7 +14,6 @@ function DarkMode() {
     document.body.classList.toggle('dark-mode', isDarkModeOn);
   }, [isDarkModeOn]);
 
-
   return (
     <div className='dark-mode-toggle'>
       <button className="toggle-btn" onClick={toggleMode}>

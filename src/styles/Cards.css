@@ -168,22 +168,3 @@
     top: -75px;
   }
 }
-
-.card.dark-mode {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(182, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    width: 100%;
-    max-width: 300px;
-    padding: 10px 20px 15px;
-    text-decoration: none;
-    color: black;
-    opacity: 85%;
-    border-radius: 15px;
-    background-color: Snow;
-  
-}

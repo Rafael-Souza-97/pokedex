@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getPokemonData } from '../services/FetchPokemons';
 import { PokemonsContext } from '../context';
+import { getFromLocalStorage } from '../services/LocalStorage';
 import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
 import TypeBadge from './TypeBadge';
 import sadPokemon from '../assets/sad-pokemon.png';
-import '../styles/Card.css';
+import '../styles/Cards.css';
 
 function FavoritesCards() {
   const { isLoading } = useContext(PokemonsContext);
@@ -15,7 +16,7 @@ function FavoritesCards() {
   if (isLoading) return <Loading />;
 
   const fetchURLFavoritePokemons = async () => {
-    const favorites = JSON.parse(localStorage.getItem('FavoritesPokemons') || '[]');
+    const favorites = getFromLocalStorage('FavoritesPokemons') || '[]';
 
     const favoritesData = favorites.map(async (pokemon: string) => {
       return await getPokemonData(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);

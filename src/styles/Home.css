@@ -7,14 +7,14 @@ body {
   width: 100%;
   min-width: 350px;
   overflow-x: hidden;
-  transition: all 400ms linear;
+  transition: all 600ms linear;
 }
 
 body.dark-mode {
-  color: aliceblue;
-  background: linear-gradient(90deg, rgba(70,70,70,1) 0%, rgba(106,106,106,1) 15%, rgba(116,116,116,1) 30%, rgba(133,133,133,1) 50%, rgba(134,134,134,1) 70%, rgba(106,106,106,1) 85%, rgba(92,92,92,1) 100%);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(110,110,110,1) 0%, rgba(150,150,150,1) 20%, rgba(150,150,150,1) 80%, rgba(110,110,110,1) 100%);
   overflow-x: hidden;
-    transition: all 400ms linear;
+    transition: all 600ms linear;
 }
 
 .search-pagination {

@@ -1,4 +1,4 @@
-.grid-container {
+.grid-container.dark-mode {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 100px 70px;
@@ -20,12 +20,12 @@
   max-width: 300px;
   padding: 10px 20px 15px;
   text-decoration: none;
-  opacity: 85%;
+  opacity: 75%;
   border-radius: 15px;
-  background-color: rgb(191, 191, 191);
+  background-color: linear-gradient(90deg, rgba(225,225,225,1) 0%, rgba(250,250,250,1) 50%, rgba(225,225,225,1) 100%);
 }
 
-.card.dark-mode p{
+.card.dark-mode p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: small;
@@ -33,7 +33,7 @@
   margin-bottom: 10px;
 }
 
-.card.dark-mode h2{
+.card.dark-mode h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: larger;
@@ -43,7 +43,7 @@
 .card.dark-mode:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   opacity: 100%;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .card-image-container.dark-mode {
@@ -86,7 +86,7 @@
   font-size: xx-large;
 }
 
-.sad-pokemon-not-found {
+.sad-pokemon-not-found.dark-mode {
   max-width: 20%;
   border-radius: 25%;
   margin-top: 100px;
@@ -95,11 +95,11 @@
   animation-iteration-count: 3;
 }
 
-.link-card {
+.link-card.dark-mode {
   text-decoration: none;
 }
 
-.types-container {
+.types-container.dark-mode {
   display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -108,7 +108,7 @@
   text-decoration: none;
 }
 
-.types {
+.types.dark-mode {
   text-decoration: none;
   border-radius: 20px;
   padding: 5px 10px;
@@ -132,16 +132,16 @@
 }
 
 @media (max-width: 767px) {
-  .grid-container {
+  .grid-container.dark-mode {
     grid-template-columns: 1fr;
     margin: 1% 30%;
   }
 
-  .sad-pokemon-not-found {
+  .sad-pokemon-not-found.dark-mode {
     width: 80%;
   }
 
-  .types-container{
+  .types-container.dark-mode {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -151,40 +151,22 @@
     color: white;
     text-decoration: none;
   }
-  .types {
+
+  .types.dark-mode {
     margin: 25px 0px;
   }
 
-  .card-image-container {
+  .card-image-container.dark-mode {
     top: -75px;
   }
 }
 
 @media (max-width: 590px) {
-  .grid-container {
+  .grid-container.dark-mode {
     margin: 1% 15%;
   }
 
-  .card-image-container {
+  .card-image-container.dark-mode {
     top: -75px;
   }
-}
-
-.card.dark-mode {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(182, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    width: 100%;
-    max-width: 300px;
-    padding: 10px 20px 15px;
-    text-decoration: none;
-    color: black;
-    opacity: 85%;
-    border-radius: 15px;
-    background-color: Snow;
-  
 }
