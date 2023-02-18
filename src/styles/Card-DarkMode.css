@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.card {
+.card.dark-mode {
   display: grid;
   justify-items: center;
   grid-template-columns: 100%;
@@ -20,13 +20,12 @@
   max-width: 300px;
   padding: 10px 20px 15px;
   text-decoration: none;
-  color: black;
   opacity: 85%;
   border-radius: 15px;
-  background-color: Snow;
+  background-color: rgb(191, 191, 191);
 }
 
-.card p{
+.card.dark-mode p{
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: small;
@@ -34,19 +33,20 @@
   margin-bottom: 10px;
 }
 
-.card h2{
+.card.dark-mode h2{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: larger;
   margin-bottom: 10px;
 }
 
-.card:hover {
+.card.dark-mode:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   opacity: 100%;
+  background-color: whitesmoke;
 }
 
-.card-image-container {
+.card-image-container.dark-mode {
   display: flex;
   justify-content: center;
   top: 0px;
@@ -62,23 +62,24 @@
   margin-bottom: -95px;
 }
 
-.card:hover .card-image-container {
+.card.dark-mode:hover .card-image-container.dark-mode {
   transform: scale(1.2);
   transition: all 0.2s ease-in-out;
 }
 
-.card-image-container img {
+.card-image-container.dark-mode img {
   z-index: 99;
   width: 40%;
 }
 
-.pokemon-search-no-results {
+.pokemon-search-no-results.dark-mode {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin-top: 5%;
+  color: aliceblue;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   text-align: center;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PokemonsContext } from '../context';
 import Loading from '../components/Loading';
 import Header from '../components/Header';
 import Pagination from '../components/Pagination';

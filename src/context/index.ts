@@ -11,6 +11,8 @@ export interface IPokemonContextData {
   totalPages: number;
   page: IPage;
   search: string;
+  isDarkModeOn: boolean;
+  setIsDarkModeOn: React.Dispatch<React.SetStateAction<boolean>>;
   setPage: React.Dispatch<React.SetStateAction<{
     page: number;
     limit: number;
