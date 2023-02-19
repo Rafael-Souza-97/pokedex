@@ -35,7 +35,8 @@ const Cards =  () => {
         className={ 
           isDarkModeOn ? 'pokemon-search-no-results dark-mode' : 'pokemon-search-no-results' 
         } 
-        data-testid='no-results'>
+        data-testid='no-results'
+      >
 
         <p>Desculpe, nenhum pokémon foi encontrado com o nome informado</p>
 

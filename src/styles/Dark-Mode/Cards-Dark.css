@@ -141,6 +141,10 @@
     width: 80%;
   }
 
+  .pokemon-search-no-results.dark-mode p {
+    font-size: large;
+  }
+
   .types-container.dark-mode {
     display: grid;
     justify-items: center;
@@ -163,10 +167,21 @@
 
 @media (max-width: 590px) {
   .grid-container.dark-mode {
-    margin: 1% 15%;
+    margin: 1% 50% 1% 40%;
   }
 
   .card-image-container.dark-mode {
     top: -75px;
+  }
+
+  .pokemon-search-no-results.dark-mode p {
+    font-size: large;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid-container.dark-mode {
+    margin: 1% 10%;
+    margin-left: 20px;
   }
 }

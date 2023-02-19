@@ -1,11 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { PokemonsContext } from '../context';
 import '../styles/SearchBar.css';
+import '../styles/Dark-Mode/SearchBar-Dark.css';
 
 function SearchBar() {
-  const { setSearch } = useContext(PokemonsContext);
+  const { setSearch, isDarkModeOn } = useContext(PokemonsContext);
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => { 
+    if (isDarkModeOn) { 
+      document.body.classList.add('dark-mode');
+    } else { 
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkModeOn]);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -22,19 +31,25 @@ function SearchBar() {
   };
   
   return (
-    <form className='search-container' onSubmit={handleSubmit}>
+    <form 
+      className={ isDarkModeOn ? 'search-container dark-mode' : 'search-container' }
+      onSubmit={ handleSubmit }
+    >
       <input
         type='text'
         placeholder='Pesquise por um Pokémon'
-        className='search-input'
         value={inputValue}
         onChange={handleChange}
         data-testid='search-bar'
+        className={ isDarkModeOn ? 'search-input dark-mode' : 'search-input' }
       />
 
-      <div className='search-logo'>
-        <button type="submit" className="submit-button">
-          <AiOutlineSearch className='search-icon' />
+      <div className={ isDarkModeOn ? 'search-logo dark-mode' : 'search-logo' } >
+        <button
+          type="submit"
+          className={ isDarkModeOn ? 'submit-button dark-mode' : 'submit-button' }
+        >
+          <AiOutlineSearch className={ isDarkModeOn ? 'search-icon dark-mode' : 'search-icon' } />
         </button>
       </div>
     </form>
