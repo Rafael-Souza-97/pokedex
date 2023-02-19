@@ -1,19 +1,19 @@
-.loading-container {
+.loading-container.dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 250px;
 }
 
-.loading-image {
+.loading-image.dark-mode {
   position: fixed;
   top: 60%;
   width: 100px;
   animation: spin 1s linear infinite;
-  filter: brightness(30%) contrast(10%);
+  filter: brightness(90%) contrast(90%);
 }
 
-.loading-screen {
+.loading-screen.dark-mode {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,10 +22,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(192, 192, 192, 0.2);
+  background-color: rgba(220, 219, 219, 0.2);
 }
 
-.loading-container {
+.loading-container.dark-mode {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,13 +41,13 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .loading-image {
+  .loading-image.dark-mode {
     width: 80px;
   }
 }
 
 @media only screen and (max-width: 490px) {
-  .loading-image {
+  .loading-image.dark-mode {
     width: 40px;
   }
 }
