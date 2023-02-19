@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { PokemonsContext } from '../context';
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
+import '../styles/Dark-Mode/Pagination-Dark.css';
 import '../styles/Pagination.css';
 
 function Pagination() {
-  const { totalPages, page, setPage } = useContext(PokemonsContext);
+  const { totalPages, page, setPage, isDarkModeOn } = useContext(PokemonsContext);
   const { limit, offset } = page;
+
+  useEffect(() => { 
+    if (isDarkModeOn) { 
+      document.body.classList.add('dark-mode');
+    } else { 
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkModeOn]);
 
   const onLeftClickHandle = () => {
     let newPage = page.page - 1;
@@ -29,24 +38,31 @@ function Pagination() {
   };
 
   return (
-    <div className='pagination-container' data-testid='pagination'>
+    <div
+      className={ isDarkModeOn ? 
+        'pagination-container dark-mode' : 'pagination-container' 
+      } 
+      data-testid='pagination'
+    >
       <button 
-        disabled={page.page === 1}
-        onClick={onLeftClickHandle}
-        className='pagination-left-button'
+        disabled={ page.page === 1 }
+        onClick={ onLeftClickHandle }
+        className={ isDarkModeOn ? 'pagination-left-button dark-mode' : 'pagination-left-button' }
         data-testid='left-button'
       >
         <HiChevronDoubleLeft />
       </button>
 
-      <div className='pagination-text' data-testid='pagination-text' >
-        {`${page.page} de ${totalPages}`}
+      <div
+        className={ isDarkModeOn ? 'pagination-text dark-mode' : 'pagination-text' }
+        data-testid='pagination-text' >
+        {`${ page.page } de ${ totalPages }`}
       </div>
 
       <button 
         disabled={ page.page === totalPages }
-        onClick={onRightClickHandle}
-        className='pagination-right-button'
+        onClick={ onRightClickHandle }
+        className={ isDarkModeOn ? 'pagination-right-button dark-mode' : 'pagination-right-button' }
         data-testid='right-button'
       >
         <HiChevronDoubleRight />

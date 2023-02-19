@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { PokemonsContext } from '../context';
-import '../styles/SearchBar.css';
 import '../styles/Dark-Mode/SearchBar-Dark.css';
+import '../styles/SearchBar.css';
 
 function SearchBar() {
   const { setSearch, isDarkModeOn } = useContext(PokemonsContext);
