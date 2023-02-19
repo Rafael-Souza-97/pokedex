@@ -26,7 +26,7 @@
   background-color: Snow;
 }
 
-.card p{
+.card p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: small;
@@ -34,7 +34,7 @@
   margin-bottom: 10px;
 }
 
-.card h2{
+.card h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: larger;
@@ -144,7 +144,7 @@
     font-size: large;
   }
 
-  .types-container{
+  .types-container {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

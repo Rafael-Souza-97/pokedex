@@ -1,16 +1,19 @@
 .to-top-button {
+  display: flex;
   border-color: transparent;
   position: fixed;
   top: 88%;
   right: 3%;
-  background-color: rgb(219, 219, 219);
-  padding: 5px 4px 5px 4px;
-  border-radius: 50%;
+  background-color: rgb(221, 221, 221);
+  padding: 5px 3px 6px 3px;
+  border-radius: 20px 20px 5px 5px;
+  cursor: pointer;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .to-top-button:hover {
-  border-radius: 50%;
-  background-color: DarkTurquoise;
+  background-color: rgb(42, 117, 187);
+  color: rgb(255, 203, 5);
 }
 
 @media (max-width: 480px) {

@@ -25,7 +25,8 @@
 
 .pagination-left-button.dark-mode:hover,
 .pagination-right-button.dark-mode:hover {
-  background: DarkTurquoise;
+  background-color: rgb(42, 117, 187);
+  color: rgb(255, 203, 5);
 }
 
 .pagination-left-button.dark-mode:disabled,
