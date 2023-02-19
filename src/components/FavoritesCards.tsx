@@ -16,7 +16,7 @@ function FavoritesCards() {
   if (isLoading) return <Loading />;
 
   const fetchURLFavoritePokemons = async () => {
-    const favorites = getFromLocalStorage('FavoritesPokemons') || '[]';
+    const favorites = getFromLocalStorage('FavoritesPokemons') || [];
 
     const favoritesData = favorites.map(async (pokemon: string) => {
       return await getPokemonData(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);

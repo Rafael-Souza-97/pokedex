@@ -1,0 +1,251 @@
+.pokemon-detail-container.dark-mode {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  color: black;
+}
+
+.pokemon-detail-container-image.dark-mode {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.favorite-container.dark-mode {
+  float: right;
+  margin-top: -10px;
+}
+
+.pokemon-detail-card-container.dark-mode {
+  background-color: rgb(240, 240, 240);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 20px 30px 60px 30px;
+  width: 70%;
+  border-radius: 20px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.pokemon-detail-image.dark-mode {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+}
+
+.pokemon-detail-id.dark-mode {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  text-align: center;
+  font-size: smaller;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  color: black;
+}
+
+.pokemon-detail-title.dark-mode {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: xx-large;
+  color: black;
+}
+
+.pokemon-detail-height-weight-container.dark-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center
+}
+
+.pokemon-detail-height-weight.dark-mode  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 60px;
+  padding: 3px;
+  border-radius: 30px;
+}
+
+.pokemon-detail-skills.dark-mode,
+.pokemon-detail-height.dark-mode,
+.pokemon-detail-weight.dark-mode  {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: smaller;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 15px;
+  padding: 3px;
+  border-radius: 30px;
+  color: black;
+}
+
+.skills-title.dark-mode,
+.pokemon-detail-height.dark-mode p,
+.pokemon-detail-weight.dark-mode p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: large;
+  color: black;
+}
+
+.skills-values.dark-mode p,
+.heigth-value.dark-mode,
+.weigth-value.dark-mode {
+  background-color: rgb(229, 229, 229);
+  padding: 20px 40px;
+  border-radius: 40px;
+  text-transform: capitalize;
+}
+
+.skills-values.dark-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-gap: 10px
+}
+
+.pokemon-detail-types.dark-mode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.pokemon-detail-stats.dark-mode {
+  display: grid;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.pokemon-detail-stats.dark-mode h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: large;
+  color: black;
+}
+
+.stats-container.dark-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  justify-items: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.stats-details.dark-mode {
+  background-color: rgb(229, 229, 229);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  border-radius: 30px;
+  padding-bottom: 20px; 
+}
+
+.pokemon-stats-name.dark-mode {
+  border-radius: 100%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.pokemon-stats-number.dark-mode {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+.pokemon-detail-skills.dark-mode h4,
+.pokemon-detail-stats.dark-mode h4 {
+  margin-bottom: 20px;
+}
+
+.hearts.dark-mode {
+  background-color: transparent;
+  border: none;
+}
+
+.favorite-heart.dark-mode {
+  width: 36px;
+}
+
+.unfavorite-heart.dark-mode {
+  width: 30px;
+}
+
+@media (max-width: 600px) {
+  .pokemon-detail-card-container.dark-mode {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .pokemon-detail-container.dark-mode {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-detail-skills.dark-mode {
+    margin-top: 50px;
+  }
+
+  .pokemon-detail-height-weight-container.dark-mode,
+  .pokemon-detail-types.dark-mode {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+    align-items: center;
+  }
+
+  .stats-container.dark-mode {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-values.dark-mode {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .pokemon-detail-container.dark-mode {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-detail-height-weight.dark-mode {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  .pokemon-detail-types.dark-mode {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .stats-container.dark-mode {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .skills-values.dark-mode {
+    grid-template-columns: 1fr;
+  }
+}
