@@ -5,8 +5,8 @@ import IPokemonDetail from '../interfaces/IPokemonDetail';
 import Loading from './Loading';
 import TypeBadge from './TypeBadge';
 import sadPokemon from '../assets/sad-pokemon.png';
+import '../styles/Dark-Mode/Cards-Dark.css';
 import '../styles/Cards.css';
-import '../styles/Cards-Dark.css';
 
 const Cards =  () => { 
   const { 

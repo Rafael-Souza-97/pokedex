@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { PokemonsContext } from '../context';
 import { BsFillMoonStarsFill, BsSun } from 'react-icons/bs';
-import '../styles/DarkMode.css';
+import '../styles/Dark-Mode/DarkMode.css';
 
 function DarkMode() {
   const { isDarkModeOn, setIsDarkModeOn } = useContext(PokemonsContext);

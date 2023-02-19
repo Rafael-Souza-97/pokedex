@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import pokeball from '../assets/pokeball.png';
 import { PokemonsContext } from '../context';
-import '../styles/Loading-Dark.css';
+import '../styles/Dark-Mode/Loading-Dark.css';
 import '../styles/Loading.css';
 
 const Loading = () => {

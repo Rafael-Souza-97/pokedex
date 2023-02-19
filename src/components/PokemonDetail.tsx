@@ -9,8 +9,8 @@ import TypeBadge from './TypeBadge';
 import StatsBadge from './StatsBadge';
 import unfavoriteHeart from '../assets/unfavorite.png';
 import favoriteHeart from '../assets/favorite.png';
+import '../styles/Dark-Mode/PokemonDetail-Dark.css';
 import '../styles/PokemonDetail.css';
-import '../styles/PokemonDetail-Dark.css';
 
 const PokemonDetail = () => {
   const [loading, setLoading] = useState(true);
