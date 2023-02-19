@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600&display=swap');
+
+.header.dark-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
+}
+
+.logo.dark-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.logo.dark-mode img {
+  height: 75px;
+  opacity: 80%;
+}
+
+.logo.dark-mode img:hover {
+  opacity: 100%;
+}
+
+.header-nav.dark-mode {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-navbar.dark-mode {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-navbar.dark-mode li {
+  margin: 0 20px;
+}
+
+.header-navbar.dark-mode a {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  color: white
+}
+
+.header-navbar.dark-mode a:hover {
+  color: DarkTurquoise;
+}
+  
+@media (max-width: 768px) {
+  .header.dark-mode {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo.dark-mode {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  
+  .header-navbar.dark-mode {
+    flex-direction: column;
+  }
+  
+  .header-navbar.dark-mode li {
+    margin: 10px 0;
+  }
+}
