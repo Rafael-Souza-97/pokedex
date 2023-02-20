@@ -3,9 +3,18 @@
 }
 
 body {
-  background:  rgb(245, 245, 250);
+  background-color:  rgb(245, 245, 250);
   width: 100%;
-  min-width: 350px;
+  min-width: 400px;
+  overflow-x: hidden;
+  transition: all 600ms linear;
+}
+
+body.dark-mode {
+  color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(110,110,110,1) 0%, rgba(150,150,150,1) 20%, rgba(150,150,150,1) 80%, rgba(110,110,110,1) 100%);
+  overflow-x: hidden;
+    transition: all 600ms linear;
 }
 
 .search-pagination {

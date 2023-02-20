@@ -1,4 +1,4 @@
-.search-container {
+.search-container.dark-mode {
   display: flex;
   align-items: center;
   width: 50%;
@@ -6,19 +6,19 @@
   margin-bottom: 30px;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  background-color: Snow;
+  background-color: rgb(240, 240, 240);
 }
   
-.search-container:active {
+.search-container.dark-mode:active {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
   
-input:focus {
+input.dark-mode:focus {
   outline: none;
   box-shadow: none;
 }
   
-.search-input {
+.search-input.dark-mode {
   flex: 1;
   height: 100%;
   padding: 0px 0px 0px 20px;
@@ -28,8 +28,8 @@ input:focus {
   color: rgb(51, 51, 51);
   font-family: 'Montserrat', sans-serif;
 }
-  
-.submit-button {
+
+.submit-button.dark-mode {
   background: none;
   border: none;
   cursor: pointer;
@@ -41,36 +41,43 @@ input:focus {
   align-items: center;
   border-radius: 0px 25px 25px 0px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background-color: rgb(45, 138, 220);
+  background: rgb(45, 138, 220);
   color: white;
   opacity: 90%;
 }
   
-.submit-button:hover {
+.submit-button.dark-mode:hover {
   opacity: 100%;
   background-color: rgb(42, 117, 187);
   color: rgb(255, 203, 5);
 }
   
-.search-icon {
+.search-icon.dark-mode {
   font-size: 25px;
   margin-left: 0;
 }
 
+
+@media only screen and (max-width: 890px) {
+  .search-container.dark-mode {
+    min-width: 420px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
-  .search-container {
+  .search-container.dark-mode {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     min-width: 300px;
   }
 
-  .search-icon {
+  .search-icon.dark-mode {
     font-size: 18px;
     margin-left: 0;
   }
 
-  .search-input {
+  .search-input.dark-mode {
     font-size: 14px;
     padding: 10px 10px 10px 20px;
     width: 80%;
@@ -78,11 +85,11 @@ input:focus {
     margin: 0;
   }
 
-  .search-input::placeholder {
+  .search-input.dark-mode::placeholder {
     font-size: 12px;
   }
   
-  .submit-button {
+  .submit-button.dark-mode {
     width: 100%;
     height: 45px;
     margin-left: 0;
@@ -90,20 +97,21 @@ input:focus {
 }
 
 @media screen and (min-width: 590px) and (max-width: 768px) {
-  .search-container {
+  .search-container.dark-mode {
     flex-direction: row;
     margin-bottom: 20px;
+    width: 350px;
   }
 
-  .search-input {
+  .search-input.dark-mode {
     width: 100%;
     max-width: 350px;
     padding: 15px 10px 15px 25px;
     font-size: 16px;
   }
 
-  .submit-button {
-    width: 80px;
+  .submit-button.dark-mode {
+    width: 90px;
     margin-left: 0;
     border-radius: 0px 25px 25px 0px;
     height: 45px;
@@ -111,8 +119,12 @@ input:focus {
 }
 
 @media only screen and (max-width: 400px) {
-  .search-container {
+  .search-container.dark-mode {
     min-width: 300px;
     margin-left: -20px;
+  }
+
+  .submit-button.dark-mode {
+    height: 45px;
   }
 }

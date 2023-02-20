@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600&display=swap');
 
-.header {
+.header.dark-mode {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,28 +9,28 @@
   margin-bottom: 30px;
 }
 
-.logo {
+.logo.dark-mode {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 30px;
 }
 
-.logo img {
+.logo.dark-mode img {
   height: 75px;
   opacity: 80%;
 }
 
-.logo img:hover {
+.logo.dark-mode img:hover {
   opacity: 100%;
 }
 
-.header-nav {
+.header-nav.dark-mode {
   display: flex;
   justify-content: flex-end;
 }
 
-.header-navbar {
+.header-navbar.dark-mode {
   display: flex;
   align-items: center;
   list-style: none;
@@ -38,38 +38,39 @@
   padding: 0;
 }
 
-.header-navbar li {
+.header-navbar.dark-mode li {
   margin: 0 20px;
 }
 
-.header-navbar a {
+.header-navbar.dark-mode a {
   color: rgb(51, 51, 51);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
+  color: white
 }
 
-.header-navbar a:hover {
-  color: DarkTurquoise;
+.header-navbar.dark-mode a:hover {
+  color: rgb(255, 203, 5);
 }
   
 @media (max-width: 768px) {
-  .header {
+  .header.dark-mode {
     flex-direction: column;
     align-items: center;
   }
 
-  .logo {
+  .logo.dark-mode {
     margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 0;
   }
   
-  .header-navbar {
+  .header-navbar.dark-mode {
     flex-direction: column;
   }
   
-  .header-navbar li {
+  .header-navbar.dark-mode li {
     margin: 10px 0;
   }
 }

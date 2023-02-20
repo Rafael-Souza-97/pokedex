@@ -1,52 +1,52 @@
-.footer-text {
+.footer-text.dark-mode {
   font-family: 'Montserrat', sans-serif;
   font-size: large;
   text-align: center;
+  font-weight: 400;
   padding: 20px;
   background-color: transparent;
 }
 
-.footer-text a {
+.footer-text.dark-mode a {
   text-decoration: none;
-  color: rgb(51, 51, 51);
   opacity: 85%;
 }
 
-.rafael {
-  color: black;
+.rafael.dark-mode {
+  color: white;
   font-weight: 600;
   opacity: 85%;
 }
 
-.rafael:hover {
-  color: rgb(36, 101, 163);
+.rafael.dark-mode:hover {
+  color: rgb(255, 203, 5);
   opacity: 100%;
 }
 
-.react {
-  color: black;
+.react.dark-mode {
+  color: white;
   font-weight: 600;
   opacity: 85%;
 }
 
-.react:hover {
+.react.dark-mode:hover {
   color: rgb(52, 98, 142);
   opacity: 100%;
 }
 
-.typescript {
-  color: black;
+.typescript.dark-mode {
+  color: white;
   font-weight: 600;
   opacity: 85%;
 }
 
-.typescript:hover {
+.typescript.dark-mode:hover {
   color: rgb(52, 98, 142);
   opacity: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  .footer-text {
+  .footer-text.dark-mode {
     font-size: 14px;
   }
 }

@@ -1,18 +1,18 @@
-.pagination-container {
+.pagination-container.dark-mode {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 20px;
   justify-content: flex-end;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   padding-right: 50px ;
 }
 
-.pagination-left-button,
-.pagination-right-button {
+.pagination-left-button.dark-mode,
+.pagination-right-button.dark-mode {
   display: flex;
-  background-color: rgb(249, 249, 249);
+  background-color: rgb(220, 220, 220);
   padding: 7px;
   font-size: 20px;
   cursor: pointer;
@@ -23,14 +23,14 @@
   box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
-.pagination-left-button:hover,
-.pagination-right-button:hover {
+.pagination-left-button.dark-mode:hover,
+.pagination-right-button.dark-mode:hover {
   background-color: rgb(42, 117, 187);
   color: rgb(255, 203, 5);
 }
 
-.pagination-left-button:disabled,
-.pagination-right-button:disabled {
+.pagination-left-button.dark-mode:disabled,
+.pagination-right-button.dark-mode:disabled {
   cursor: not-allowed;
   background: none;
   background-color: rgb(255, 255, 255);
@@ -38,29 +38,29 @@
   opacity: 0.7;
 }
 
-.pagination-text {
+.pagination-text.dark-mode {
   font-size: 20px;
   margin: 0 10px;
 }
 
 @media (max-width: 768px) {
-  .pagination-container {
+  .pagination-container.dark-mode {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: 400;
   }
 
-  .pagination-left-button,
-  .pagination-right-button {
+  .pagination-left-button.dark-mode,
+  .pagination-right-button.dark-mode {
     font-size: 16px;
     padding: 5px 10px;
   }
 
-  .pagination-text {
+  .pagination-text.dark-mode {
     font-size: 16px;
   }
 }

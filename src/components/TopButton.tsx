@@ -34,7 +34,7 @@ const TopButton: React.FC = () => {
         onClick={handleClick}
         className="to-top-button"
       >
-        <RxDoubleArrowUp size={25} color={'black'} />
+        <RxDoubleArrowUp size={25} />
       </button>
     )
   ) || null;

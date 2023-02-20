@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import pokeball from '../assets/pokeball.png';
+import { PokemonsContext } from '../context';
+import '../styles/Dark-Mode/Loading-Dark.css';
 import '../styles/Loading.css';
 
 const Loading = () => {
+  const { isDarkModeOn } = useContext(PokemonsContext);
+
+  useEffect(() => { 
+    if (isDarkModeOn) { 
+      document.body.classList.add('dark-mode');
+    } else { 
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkModeOn]);
+
   return (
-    <div className="loading-screen">
-      <div className="loading-container" data-testid='loading-logo'>
-        <img src={pokeball} alt="pokeball-loading" className='loading-image' />
+    <div className={ isDarkModeOn ? 'loading-screen dark-mode' : 'loading-screen' } >
+      <div 
+        data-testid='loading-logo'
+        className={
+          isDarkModeOn ? 'loading-container dark-mode' : 'loading-container'
+        }>
+
+        <img
+          src={ pokeball }
+          alt="pokeball-loading"
+          className={ isDarkModeOn ? 'loading-image dark-mode' : 'loading-image' }
+        />
       </div>
     </div>
   );

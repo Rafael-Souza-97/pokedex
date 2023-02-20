@@ -26,7 +26,7 @@
   background-color: Snow;
 }
 
-.card p{
+.card p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: small;
@@ -34,7 +34,7 @@
   margin-bottom: 10px;
 }
 
-.card h2{
+.card h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: larger;
@@ -140,7 +140,11 @@
     width: 80%;
   }
 
-  .types-container{
+  .pokemon-search-no-results p {
+    font-size: large;
+  }
+
+  .types-container {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -150,6 +154,7 @@
     color: white;
     text-decoration: none;
   }
+
   .types {
     margin: 25px 0px;
   }
@@ -161,10 +166,21 @@
 
 @media (max-width: 590px) {
   .grid-container {
-    margin: 1% 15%;
+    margin: 1% 50% 1% 40%;
   }
 
   .card-image-container {
     top: -75px;
+  }
+
+  .pokemon-search-no-results p {
+    font-size: large;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid-container {
+    margin: 1% 10%;
+    margin-left: 20px;
   }
 }

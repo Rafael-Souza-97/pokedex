@@ -1,4 +1,4 @@
-.about-container {
+.about-container.dark-mode {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,86 +8,86 @@
   flex-wrap: wrap;
 }
 
-.text-images {
+.text-images.dark-mode {
   display: flex;
   width: 80%;
 }
 
-.about-text {
+.about-text.dark-mode {
   text-align: center;
 }
 
-.about-text h1 {
+.about-text.dark-mode h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 40px;
   margin-bottom: 25px;
 }
 
-.about-text h2 {
+.about-text.dark-mode h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 25px;
   margin-bottom: 25px;
 }
 
-.about-text p {
+.about-text.dark-mode p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: 25px;
   margin-bottom: 25px;
 }
 
-.left-image-about {
+.left-image-about.dark-mode {
   width: 100%;
   justify-self: end;
 }
 
-.about-text {
+.about-text.dark-mode {
   grid-column: 5 / span 4;
   text-align: center;
 }
 
-.contact-info {
+.contact-info.dark-mode {
   grid-column: 9 / span 4;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.about-link {
+.about-link.dark-mode {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: 300;
 }
 
-.about-link:hover span {
-  color: rgb(42, 117, 187);
+.about-link.dark-mode:hover span {
+  color: rgb(255, 203, 5);
   font-weight: 400;
 }
 
-.image-about {
+.image-about.dark-mode {
   display: flex;
   width: 100%;
   align-items: center
 }
 
-.text {
+.text.dark-mode {
   text-align: center;
   padding: 0 5%;
 }
 
-.cap-pokemon {
+.cap-pokemon.dark-mode {
   max-width: 100%;
   margin-right: 20%;
 }
 
-.happy-pokemon {
+.happy-pokemon.dark-mode {
   max-width: 80%;
   margin-left: 10%;
 }
 
-.pokedex-repo {
+.pokedex-repo.dark-mode {
   display: flex;
   justify-content: center;
   margin: 30px;
@@ -95,27 +95,27 @@
   font-size: 25px;
   font-weight: 600;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
-.pokedex-repo:hover span {
+.pokedex-repo.dark-mode:hover span {
   color: rgb(42, 117, 187);
 }
 
-.contact-info {
+.contact-info.dark-mode {
   display: flex;
   max-width: 600px;
   margin-top: 30px;
 }
 
-.contact-title {
+.contact-title.dark-mode {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 25px;
   margin-bottom: 10px;
 }
 
-.contact-badges {
+.contact-badges.dark-mode {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -125,11 +125,11 @@
   margin-left: 20px;
 }
 
-.email,
-.phone,
-.linkedin,
-.github,
-.portfolio {
+.email.dark-mode,
+.phone.dark-mode,
+.linkedin.dark-mode,
+.github.dark-mode,
+.portfolio.dark-mode {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -137,36 +137,36 @@
   margin: 0px 15px
 }
 
-.email h3,
-.phone h3,
-.linkedin h3,
-.github h3,
-.portfolio h3 {
+.email.dark-mode h3,
+.phone.dark-mode h3,
+.linkedin.dark-mode h3,
+.github.dark-mode h3,
+.portfolio.dark-mode h3 {
   margin-left: 5px;
 }
 
 @media screen and (max-width: 768px) {
-  .about-container {
+  .about-container.dark-mode {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   
-  .about-text p {
+  .about-text.dark-mode p {
     width: 100%;
     font-size: 23px;
     margin: 0;
   }
 
-  .cap-pokemon {
+  .cap-pokemon.dark-mode {
     display: none;
   }
 
-  .happy-pokemon {
+  .happy-pokemon.dark-mode {
     display: none;
   }
 
-  .phone h3 {
+  .phone.dark-mode h3 {
     font-size: 17px;
   }
 }

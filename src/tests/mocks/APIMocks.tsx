@@ -15,6 +15,8 @@ export const valueLoadingOn = {
     offset: 0
   },
   search: '',
+  isDarkModeOn: false,
+  setIsDarkModeOn: jest.fn(),
   setPage: jest.fn(),
   setSearch: jest.fn(),
 };
@@ -31,6 +33,8 @@ export const page1LoadingOff  = {
     offset: 0
   },
   search: '',
+  isDarkModeOn: false,
+  setIsDarkModeOn: jest.fn(),
   setPage: jest.fn(),
   setSearch: jest.fn(),
 };
@@ -47,6 +51,8 @@ export const page2LoadingOff = {
     offset: 50
   },
   search: '',
+  isDarkModeOn: false,
+  setIsDarkModeOn: jest.fn(),
   setPage: jest.fn(),
   setSearch: jest.fn(),
 };
@@ -73,6 +79,8 @@ export const emptyFilteredPokemonLoadingOff = {
     limit: 0,
     offset: 0
   },
+  isDarkModeOn: false,
+  setIsDarkModeOn: jest.fn(),
   setPage: jest.fn(),
   setSearch: jest.fn()
 };
@@ -85,6 +93,8 @@ export const mockContextData: IPokemonContextData = {
   search: '',
   totalPages: 1,
   page: { page: 1, limit: 10, offset: 0 },
+  isDarkModeOn: false,
+  setIsDarkModeOn: jest.fn(),
   setPage: jest.fn(),
   setSearch: jest.fn(),
 };
