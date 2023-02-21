@@ -36,7 +36,7 @@ const PokemonDetail = () => {
   }
 
   const checkIsFavorite = (id: string): void => {
-    const favorites: string[] = getFromLocalStorage('FavoritesPokemons') || '[]';
+    const favorites: string[] = getFromLocalStorage('FavoritesPokemons') || [];
     setIsFavorite(favorites.includes(id));
   };
 
@@ -135,7 +135,7 @@ const PokemonDetail = () => {
             <img
               src={details.sprites.front_default}
               alt={details.name}
-              data-testid={'pokemon-image'}
+              data-testid={ 'pokemon-image' }
               className={
                 isDarkModeOn ? 'pokemon-detail-image dark-mode' : 'pokemon-detail-image'
               }/>
