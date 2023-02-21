@@ -32,7 +32,7 @@ export const PokemonsContextProvider = ({ children }: IProps) => {
   const [totalPages, setTotalPages] = useState(0);
   const [search, setSearch] = useState('');
   const [responseSearch, setResponseSearch] = useState({} as ISearchPokemonData);
-  const [isDarkModeOn, setIsDarkModeOn] = useState(() => isDarkModeOnInitial) ;
+  const [isDarkModeOn, setIsDarkModeOn] = useState(() => isDarkModeOnInitial);
 
   useEffect(() => {
     const fetchSearchPokemons = async () => {

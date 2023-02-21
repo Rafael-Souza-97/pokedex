@@ -50,7 +50,7 @@
 }
 
 .header-navbar a:hover {
-  color: DarkTurquoise;
+  color: rgb(42, 117, 187);
 }
   
 @media (max-width: 768px) {

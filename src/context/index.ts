@@ -13,12 +13,12 @@ export interface IPokemonContextData {
   search: string;
   isDarkModeOn: boolean;
   setIsDarkModeOn: React.Dispatch<React.SetStateAction<boolean>>;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
   setPage: React.Dispatch<React.SetStateAction<{
     page: number;
     limit: number;
     offset: number;
   }>>
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const PokemonsContext = createContext<IPokemonContextData>({} as IPokemonContextData);

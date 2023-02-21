@@ -28,7 +28,7 @@ const Cards =  () => {
   if(!filteredPokemon || !filteredPokemon.results) return null;
 
   if (isLoading) return <Loading />;
-  
+
   if (search.length !== 0 && searchResults.results.length === 0) { 
     return (
       <div 
@@ -53,41 +53,41 @@ const Cards =  () => {
   if (search.length === 0 && searchResults.results.length === 0) { 
     return (
       <div className={ isDarkModeOn ? 'grid-container dark-mode' : 'grid-container' }>
-
-        {  isLoading ? (
+        { isLoading ? (
           <Loading />
         ) : (
           filteredPokemon.results.map((poke: IPokemonDetail, index: number) => (
             <Link
-              to={ `/pokemon/${ poke.id}`}
-              key={ index}
+              to={ `/pokemon/${ poke.id }`}
+              key={ index }
               style={ {  textDecoration: 'none' }}
             >
               <div
                 key={ index}
                 className={  isDarkModeOn ? 'card dark-mode' : 'card'}
-                data-testid={ `card-${ index}`}
+                data-testid={ `card-${ index }`}
               >
                 <div className={
                   isDarkModeOn ? 'card-image-container dark-mode' : 'card-image-container'
                 }>
                   <img
-                    src={ poke.sprites.front_default}
-                    alt={ poke.name}
+                    src={ poke.sprites.front_default }
+                    alt={ poke.name }
                     className={
                       isDarkModeOn ? 'card-pokemon-image dark-mode' : 'card-pokemon-image' 
                     }/>
                 </div>
   
-                <p>Nº: { poke.id}</p>
+                <p>Nº: { poke.id }</p>
   
-                <h2>{ poke.name[0].toUpperCase() + poke.name.substring(1)}</h2>
+                <h2>{ poke.name[0].toUpperCase() + poke.name.substring(1) }</h2>
   
                 <div className={ isDarkModeOn ? 'types-container dark-mode' : 'types-container' }>
                   { poke.types.map((type) => (
                     <TypeBadge key={ type.type.name } type={ type.type.name } />
                   ))}
                 </div>
+
               </div>
             </Link>
           ))
