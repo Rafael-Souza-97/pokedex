@@ -191,7 +191,7 @@ git push origin sua-feature-ou-correcao
 
 ## Site / Deploy
 
-- https://rafael-pokedex-challenge.vercel.app/
+- https://rafael-pokedex-challenge.vercel.app
 
 ## Vídeo / Preview
 
