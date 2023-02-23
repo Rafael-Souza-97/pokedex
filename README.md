@@ -198,3 +198,5 @@ git push origin sua-feature-ou-correcao
 ## Vídeo / Preview
 
 https://user-images.githubusercontent.com/99055008/220432489-4d26cadf-4b02-4286-8f27-083aa72822ef.mp4
+
+<hr>
