@@ -189,6 +189,8 @@ git push origin sua-feature-ou-correcao
 - [React Testing Library - RTL](https://testing-library.com/docs/react-testing-library/intro/)
 - [Jest](https://jestjs.io/pt-BR/)
 
+<br>
+
 ## Site / Deploy
 
 - https://rafael-pokedex-challenge.vercel.app
